@@ -1,0 +1,58 @@
+/** Icon font */
+@font-face{
+	font-family: "OCDIcons";
+	src:url("../fonts/OCDIcons/OCDIcons.eot");
+	src:url("../fonts/OCDIcons/OCDIcons.eot#iefix") format("embedded-opentype"),
+		url("../fonts/OCDIcons/OCDIcons.woff") format("woff"),
+		url("../fonts/OCDIcons/OCDIcons.ttf") format("truetype"),
+		url("../fonts/OCDIcons/OCDIcons.svg#OCDIcons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"]{
+	font-family: "OCDIcons";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-double-down::before			{	content: "\2a54";	}
+.icon-arrow-double-left::before			{	content: "«";		}
+.icon-arrow-double-right::before		{	content: "»";		}
+.icon-arrow-double-up::before			{	content: "\2a53";	}
+.icon-arrow-down::before				{	content: "\25bd";	}
+.icon-arrow-left::before				{	content: "\25c1";	}
+.icon-arrow-right::before				{	content: "\25b7";	}
+.icon-arrow-thin-down::before			{	content: "\fe40";	}
+.icon-arrow-thin-left::before			{	content: "\3008";	}
+.icon-arrow-thin-right::before			{	content: "\3009";	}
+.icon-arrow-thin-up::before				{	content: "\fe3f";	}
+.icon-arrow-up::before					{	content: "\25b3";	}
+.icon-blog::before						{	content: "\33d2";	}
+.icon-book::before						{	content: "\1f56e";	}
+.icon-chart::before						{	content: "\27c0";	}
+.icon-envelope::before					{	content: "\2709";	}
+.icon-facebook-fat::before				{	content: "F";		}
+.icon-facebook::before					{	content: "f";		}
+.icon-google-plus::before				{	content: "g";		}
+.icon-knight::before					{	content: "\265e";	}
+.icon-linked-in::before					{	content: "\33cc";	}
+.icon-ocd-logo::before					{	content: "\e60e";	}
+.icon-paperclip::before					{	content: "\1f4ce";	}
+.icon-pencil::before					{	content: "\270f";	}
+.icon-social-pulse::before				{	content: "\e606";	}
+.icon-teacher::before					{	content: "\e604";	}
+.icon-tick::before						{	content: "\2713";	}
+.icon-triangle-down::before				{	content: "\25bc";	}
+.icon-triangle-left::before				{	content: "\25c0";	}
+.icon-triangle-right::before			{	content: "\25b6";	}
+.icon-triangle-up::before				{	content: "\25b2";	}
+.icon-twitter::before					{	content: "\f099";	}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Circle Digital &bull; Contact Us</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="initial-scale=1, minimum-scale=1" />
+
+<link rel="stylesheet" type="text/css" href="src/css/fonts.css" media="all" />
+<link rel="stylesheet" type="text/css" href="src/css/global.css" media="all" />
+<link rel="stylesheet" type="text/css" href="src/css/main.css" media="all" />
+
+<style type="text/css">
+#ocd-offices > div > h3{
+	font: bold 1em "Open Sans";
+}
+
+#ocd-offices .btn{
+	margin-top: .45em;
+}
+
+
+/** Hide some Schema.org-specific elements */
+#ocd-meta,
+#ocd-melbourne [itemprop="addressLocality"] ~ span{
+	display: none !important;
+}
+	#ocd-melbourne [itemprop="addressLocality"]{
+		display: block;
+	}
+
+#ocd-sydney data + span::after{
+	content: "";
+	display: block;
+}
+
+
+@media screen and (min-width: 37.5em){
+#ocd-offices{
+	display: table;
+	width: 100%;
+}
+	#ocd-offices > div{
+		display: table-cell;
+		vertical-align: top;
+		width: 50%;
+		padding-left: 1em;
+	}
+		#ocd-offices > div > h3{
+			font-size: 1.25em;
+		}
+	#ocd-offices > div:first-of-type{
+		padding-left: 0;
+	}
+}
+</style>
+</head>
+
+
+<body>
+
+	<header id="top">
+		<h1 id="logo"><a href="#">Online Circle Digital</a></h1>
+
+		<nav id="topnav">
+			<input class="menu control" type="checkbox" id="topnav_0" checked="checked" />
+			<label class="menu disclosure" for="topnav_0">Menu</label>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Clients</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">Resources</a></li>
+				<li><a href="#">Careers</a></li>
+				<li><a href="#">ASX</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+
+
+	<main role="main">
+		<div id="wp-content">
+			<h2>Contact Us</h2>
+			<p>The digital world is about a conversation, so let&rsquo;s talk.</p>
+
+
+			<div id="ocd-offices" itemscope="itemscope" itemtype="http://schema.org/Organization">
+				<div id="ocd-meta">
+					<span itemprop="name">Online Circle Digital</span>
+					<b>Homepage:</b> <a itemprop="url" href="http://theonlinecircle.com/">http://theonlinecircle.com/</a>
+					<img itemprop="logo" src="/src/img/ocd-logo-vcf.png" alt="Online Circle Digital" />
+				</div>
+
+				<div id="ocd-melbourne" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+					<h3 itemprop="name">Online Circle Digital Melbourne</h3>
+					<dl>
+						<dt><abbr title="Telephone">Tel</abbr></dt>
+						<dd itemprop="telephone">(+61) 3 9696 7473</dd>
+
+						<dt>Email</dt>
+						<dd><a itemprop="email" href="mailto:info@theonlinecircle.com">info@theonlinecircle.com</a></dd>
+
+						<dt>Twitter</dt>
+						<dd><a href="https://twitter.com/theonlinecircle">@theonlinecircle</a></dd>
+
+						<dt><abbr title="Address">Add</abbr></dt>
+						<dd>
+							<span itemprop="streetAddress">Kings Business Park, Ground Floor<br/>Building B, 99 Coventry <abbr title="street">St</abbr></span>
+							<span itemprop="addressLocality">South Melbourne</span>
+							<span itemprop="addressRegion" class="abbr">Vic<span>toria</span></span>
+							<span itemprop="postalCode">3205</span>
+							<span itemprop="addressCountry">Australia</span>
+							<a class="btn" href="http://goo.gl/maps/WkUOm" data-geo="-37.83087,144.96711" target="_blank">Google Maps</a>
+						</dd>
+					</dl>
+				</div>
+
+
+
+				<div id="ocd-sydney" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+					<h3 itemprop="name">Online Circle Digital Sydney</h3>
+					<dl>
+						<dt><abbr title="Telephone">Tel</abbr></dt>
+						<dd itemprop="telephone">(+61) 2 9004 7008</dd>
+
+						<dt>Email</dt>
+						<dd><a itemprop="email" href="mailto:info@theonlinecircle.com">info@theonlinecircle.com</a></dd>
+
+						<dt>Twitter</dt>
+						<dd><a href="https://twitter.com/theonlinecircle">@theonlinecircle</a></dd>
+
+						<dt><abbr title="Address">Add</abbr></dt>
+						<dd>
+							<span itemprop="streetAddress">Level 39 / 2 Park Street</span><br/>
+							<span itemprop="addressLocality">Sydney</span>
+							<span itemprop="addressRegion" class="abbr">N<span>ew </span>S<span>outh </span>W<span>ales</span></span>
+							<span itemprop="postalCode">2000</span>
+							<span itemprop="addressCountry">Australia</span>
+							<a class="btn" href="http://goo.gl/maps/3t4yj" data-geo="-33.873092,151.207559" target="_blank">Google Maps</a>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+
+	<footer id="bottom">
+		<div id="strategic-partner">Strategic Partner <abbr class="r aana" title="Australian Association of National Advertisers">AANA</abbr></div>
+
+
+		<aside id="our-clients">
+			<h3>Meet some of our clients:</h3>
+
+			<div class="rotator">
+				<div class="n prev" role="button">Previous</div>
+				<div class="n next" role="button">Next</div>
+				<ul>
+					<li class="active"><img src="src/img/uploads/our-clients-1.png" alt="" /></li>
+					<li><img src="src/img/uploads/our-clients-2.png" alt="" /></li>
+					<li><img src="src/img/uploads/our-clients-3.png" alt="" /></li>
+				</ul>
+			</div>
+		</aside>
+
+
+		<address>
+			<span class="social-links">
+				<a class="gp" href="https://plus.google.com/116963871548252020984?prsrc=3" target="_blank">Google+</a>
+				<a class="li" href="http://www.linkedin.com/company/262003" target="_blank">LinkedIn</a>
+				<a class="fb" href="https://www.facebook.com/onlinecircle" target="_blank">Facebook</a>
+				<a class="tw" href="https://twitter.com/onlinecircle" target="_blank">Twitter</a>
+				<a class="bl" href="http://www.marketingeasy.net/" target="_blank">Blog</a>
+			</span><span class="phone-number"><span>tel: </span><a href="tel:+61396967473">(03) 9696 7473</a></span>
+		</address>		
+	</footer>
+
+
+	<!--[if lt IE 9]><script type="text/javascript" src="src/js/jquery-1.11.1.js"></script><![endif]-->
+	<!--[if gte IE 9]><!--><script type="text/javascript" src="src/js/jquery-2.1.1.js"></script><!--<![endif]-->
+	<script type="text/javascript" src="src/js/utils.js"></script>
+	<script type="text/javascript" src="src/js/main.js"></script>
+</body>
+</html>

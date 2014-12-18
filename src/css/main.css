@@ -1,0 +1,604 @@
+html, body{
+	min-height: 100%;
+	overflow-x: hidden;
+	width: 100%;
+	position: absolute;
+}
+
+body{
+	overflow: hidden;
+	padding-top: 3.125em;
+	padding-bottom:	11.25em;
+}
+
+
+
+/** Navigation bar */
+#top{
+	position: fixed;
+	background: #000;
+	z-index: 9;
+	color:	#fff;
+	top:	0;
+	left:	0;
+	width:	100%;
+	height:	3.125em;
+	text-align: right;
+	text-transform: uppercase;
+}
+	/** OCD logo */
+	#logo{
+		position: absolute;
+		left:	0;
+		top:	0;
+		height:	100%;
+		font-size: 1em;
+		z-index: 10;
+	}
+		#logo > a{
+			display: block;
+			text-align: left;
+			text-indent: -999em;
+			width: 9.05em;
+			height: 100%;
+			background: url("../img/ocd-logo.png") #009ed5 no-repeat 50% 50%;
+		}
+			/** Vertically-stacked logo that's displayed on desktop */
+			#logo > a::before{
+				background-image: url("../img/ocd-logo-tall.png");
+			}
+
+
+	/** Dropdown menu */
+	#topnav{
+		display: inline-block;
+		font-weight: 600;
+		height: 100%;
+	}
+		#topnav .active > a:link,
+		#topnav .active > a:visited{
+			color: #009ed5;
+		}
+
+
+/** Background images */
+#bg,
+#bg > .layer{
+	position: fixed;
+	overflow: hidden;
+	top:	0;
+	left:	0;
+	bottom:	0;
+	right:	0;
+}
+	#bg > .layer{
+		background: no-repeat 50% 50% fixed;
+		-webkit-background-size:	cover;
+		-khtml-background-size:		cover;
+		-moz-background-size:		cover;
+		-ms-background-size:		cover;
+		-o-background-size:			cover;
+		background-size:			cover;
+	}
+
+
+main{
+	
+}
+	/** "Hello, we are OCD" */
+	.oc-hello{
+		display: inline-block;
+		max-width: 12em;
+		margin: 0 auto;
+		white-space: nowrap;
+	}
+		.oc-hello > i{
+			display: inline-block;
+			padding-right: .15em;
+		}
+			.oc-hello > i:first-child{
+				font-size: 1.46em;
+			}
+
+		.oc-hello > strong{
+			font: 600 .65em/.7 "Open Sans";
+			color: #009ed5;
+			text-transform: uppercase;
+			display: block;
+		}
+		
+		.oc-hello + p{
+			margin: .5em auto .25em;
+			text-align: left;
+			max-width: 18em;
+		}
+			.oc-hello + p > span{
+				display: block;
+				text-align: right;
+			}
+
+		.oc-hello + p ~ p{
+			font-size: .8em;
+			margin: 0 1em;
+		}
+
+	
+	/** WordPress content */
+	#wp-content{
+		padding: 2em;
+		line-height: 1.5;
+	}
+		/** Golden call-to-action button centred beneath circled content. */
+		#call-to-action{
+			margin-top: 1em;
+			position: absolute;
+			left: 50%;
+			-webkit-transform:	translateX(-50%);
+			-moz-transform:		translateX(-50%);
+			-ms-transform:		translateX(-50%);
+			-o-transform:		translateX(-50%);
+			transform:			translateX(-50%);
+		}
+
+
+	/** Centred circle */
+	body.circle{
+		position: absolute;
+		width:	100%;
+		height:	100%;
+		text-align: center;
+		white-space: nowrap;
+		min-height: 36.25em;
+	}
+		/** Centring aide */
+		body.circle::after{
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+			width: 0;
+		}
+
+		/** Inline our <main> element for proper centring. */
+		body.circle > main{
+			display: inline-block;
+			vertical-align: middle;
+			white-space: normal;
+			position: relative;
+			color: #fff;
+			width: 100%;
+			max-width: 22em;
+			text-shadow: .05em .05em .05em #171717;
+			z-index: 2;
+		}
+			/** Generate a neat background circle to sit behind our snazzy content. */
+			body.circle > main::after{
+				content: "";
+				display: block;
+				position: absolute;
+				background: #171717;
+				z-index: -1;
+				top:	50%;
+				left:	50%;
+				width:	100%;
+				padding-top: 100%;
+		
+				-webkit-transform:	translate(-50%, -50%);
+				-moz-transform:		translate(-50%, -50%);
+				-ms-transform:		translate(-50%, -50%);
+				-o-transform:		translate(-50%, -50%);
+				transform:			translate(-50%, -50%);
+		
+				-webkit-border-radius:	50%;
+				-moz-border-radius:		50%;
+				border-radius:			50%;
+			}
+
+			/** (Snazzy) content */
+			body.circle > main > #wp-content{
+				padding: 1em 1em 0;
+			}
+
+
+
+
+/** Footer */
+#bottom{
+	position: absolute;
+	text-align: center;
+	z-index: 5;
+	bottom:	0;
+	left:	0;
+	right:	0;
+	height:	11.25em;
+	background: #000;
+	padding: .5em;
+	color: #fff;
+}
+	#strategic-partner{
+		font: italic 1em Georgia, serif;
+		margin-bottom: 1em;
+	}
+
+
+	#our-clients{
+		margin: 0 -.25em;
+		padding: 0 1.5em;
+	}
+
+
+	/** Contact details */
+	#bottom > address{
+		font-style: normal;
+		border-top: 1px solid #323131;
+		white-space: nowrap;
+		text-align: left;
+		margin: 0 -.5em;
+	}
+		#bottom > address > *{
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
+			padding: .5em;
+		}
+
+		.social-links{
+			overflow: hidden;
+			font: italic 1em Georgia, serif;
+			padding-right: 0; 
+		}
+			/** Circled icon representing a social channel */
+			.social-links > a{
+				position: relative;
+				background: #282828;
+				display: inline-block;
+				vertical-align: bottom;
+				text-align: left;
+				text-indent: -999em;
+				font-size: 1.6em;
+				height:	1em;
+				width:	1em;
+	
+				-webkit-border-radius:	50%;
+				-moz-border-radius:		50%;
+				border-radius:			50%;
+			}
+				/** Replaced icon */
+				.social-links > a::before{
+					display: block;
+					position: absolute;
+					text-align: center;
+					text-indent: 0;
+					font: .55em/1 OCDIcons;
+					speak:	none;
+					top:	50%;
+					left:	0;
+					width:	100%;
+					margin-top: -.5em;
+				}
+					.social-links > a:hover{
+						background: #009ed5;
+						color: #000;
+					}
+						.social-links > a:hover::before{
+							color: inherit;
+						}
+
+					/** Google+ */
+					.social-links > .gp::before{
+						content: "g";
+					}
+
+					/** LinkedIn */
+					.social-links > .li::before{
+						content: "\33cc";
+						font-size: .5em;
+						color: #79c9fb;
+					}
+
+					/** Facebook */
+					.social-links > .fb::before{
+						content: "f";
+						color: #1478de;
+					}
+
+					/** Twitter */
+					.social-links > .tw::before{
+						content: "\f099";
+						color: #30b7fd;
+						font: .5em/1.2 OCDIcons;
+					}
+
+					/** Blog (MarketingEasy.net) */
+					.social-links > .bl::before{
+						content: "\33d2";
+						color: #e3b517;
+						font-size: .77em;
+						line-height: 1.11;
+						-webkit-transform:	scaleX(.95);
+						-moz-transform:		scaleX(.95);
+						-ms-transform:		scaleX(.95);
+						-o-transform:		scaleX(.95);
+						transform:			scaleX(.95);
+					}
+
+
+
+		.phone-number{
+			text-align: right;
+			font-weight: 600;
+			line-height: 1.6;
+			padding-left: 0;
+		}
+			.phone-number > span{
+				color: #009ed5;
+			}
+			.phone-number > a{
+				padding-left: .25em;
+			}
+
+
+
+
+/*=============================================================================*
+	1. SMARTPHONES/TABLETS (< 1024)
+===============================================================================*/
+@media not all and (min-width: 64em){
+
+#topnav{
+	
+}
+	#topnav::before{
+		content: "";
+		display: block;
+		position: absolute;
+		top:	0;
+		left:	0;
+		right:	0;
+		height:	100%;
+		background: #000;
+		z-index: 1;
+	}
+
+
+	/** Button for opening/closing nav menu */
+	#topnav > .disclosure{
+		display: inline-block;
+		vertical-align: middle;
+		white-space: nowrap;
+		padding: .25em 1em 0;
+		height: 100%;
+		position: relative;
+		cursor: pointer;
+		z-index: 10;
+		-webkit-user-select:	none;
+		-moz-user-select:		none;
+		-ms-user-select:		none;
+	}
+		/** Centring aide */
+		#topnav > .disclosure::before{
+			content: "";
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+			width: 0;
+		}
+
+		/** Blue triangle */
+		#topnav > .disclosure::after{
+			content: "\25b2";
+			font: 1em OCDIcons;
+			color: #009ed5;
+			display: inline-block;
+			margin-left: .5em;
+		}
+			#topnav > .control:checked + .disclosure::after{
+				content: "\25bc"; 
+			}
+
+
+	/** Actual dropdown menu */
+	#topnav > ul{
+		position: absolute;
+		top:	100%;
+		left:	0;
+		right:	0;
+		margin: 0;
+		padding: 0;
+		background: #272727;
+		text-align: left;
+		list-style: none;
+		overflow: hidden;
+		overflow-y: auto;
+
+		max-height: 100vh;
+		max-height: -webkit-calc(	100vh - 3.125em);
+		max-height: -moz-calc(		100vh - 3.125em);
+		max-height: calc(			100vh - 3.125em);
+
+		-webkit-transform:	translateY(0);
+		-moz-transform:		translateY(0);
+		-ms-transform:		translateY(0);
+		-o-transform:		translateY(0);
+		transform:			translateY(0);
+
+		-webkit-transition:	0s step-end max-height,	.3s ease -webkit-transform;
+		-moz-transition:	0s step-end max-height,	.3s ease -moz-transform;
+		-o-transition:		0s step-end max-height,	.3s ease -o-transform;
+		transition:			0s step-end max-height,	.3s ease transform;
+	}
+		/** Closed state */
+		#topnav > .control:checked ~ ul{
+			-webkit-transform:	translateY(-100%);
+			-moz-transform:		translateY(-100%);
+			-ms-transform:		translateY(-100%);
+			-o-transform:		translateY(-100%);
+			transform:			translateY(-100%);
+
+			-webkit-transition-delay:	.3s, 0s;
+			-moz-transition-delay:		.3s, 0s;
+			-o-transition-delay:		.3s, 0s;
+			transition-delay:			.3s, 0s;
+		}
+
+		#topnav > ul > li{
+			border-top: 1px solid #323131;
+		}
+			#topnav > ul > :first-child{
+				border-top: 0;
+			}
+
+			/** Links */
+			#topnav > ul > li > a{
+				display: block;
+				padding: .55em 2.5em;
+				font-size: 1.125em;
+				position: relative;
+			}
+				/** Pointing arrow */
+				#topnav > ul > li > a::before{
+					font: .7em OCDIcons;
+					content: "\25b7";
+					color: #009ed5;
+					position: absolute;
+					left: 1.2em;
+					top: 50%;
+					margin-top: -.5em;
+				}
+
+				#topnav > ul > li > a:hover{
+					background: #686868;
+				}
+}
+
+
+/*=============================================================================*
+	2. TABLETS (600+)
+===============================================================================*/
+@media (min-width: 37.5em){
+	
+	/** Expand the circle */
+	body.circle > main{
+		font-size: 1.2em;
+	}
+		
+
+
+	/** Increase the size of our footer elements. */
+	.social-links > a{
+		font-size: 2.25em;
+	}
+	#our-clients > h3{
+		font-size: 1.25em;
+	}
+	#our-clients > .rotator{
+		font-size: 4.5em;
+		margin: 0 auto;
+	}
+}
+
+
+
+/*=============================================================================*
+	3. DESKTOP (1024+)
+===============================================================================*/
+@media (min-width: 64em){
+#top{
+	text-align: left;
+}
+	#logo{
+		left: auto;
+		top:	0;
+		right:	0;
+		margin:	1.25em;
+		height:	6em;
+		width:	6em;
+	}
+		#top > #logo > a{
+			width: 100%;
+			background-image: none;
+		}
+			#logo > a::before{
+				content: "";
+				position: absolute;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				top:	0;
+				left:	0;
+				right:	0;
+				bottom:	0;
+			}
+
+
+	/** Navigation menu */
+	#topnav{
+		position: relative;
+		z-index: 10;
+	}
+		#topnav > .disclosure{
+			display: none;
+		}
+
+		#topnav > ul,
+		#topnav > ul > li{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0;
+			padding: 0;
+		}
+			#topnav > ul > li > a{
+				display: block;
+				padding: .875em 1em;
+			}
+
+
+
+
+	body.circle > main{
+		font-size: 1.64em;
+	}
+		.oc-hello + p ~ p{
+			font-size: 16px;
+			font-size: 1rem;
+			margin: 0 2em;
+		}
+
+
+	#bottom{
+		background: none;
+		text-align: left;
+	}
+		#bottom > address{
+			border-top: 0;
+		}
+}
+
+
+
+/*=============================================================================*
+	HIGH-RESOLUTION DEVICES
+===============================================================================*/
+@media print,
+	(-webkit-min-device-pixel-ratio: 1.2),
+	(-o-min-device-pixel-ratio: 5/4),
+	(min-resolution: 120dpi)
+{
+	#logo > a{
+		background-image: url("../img/ocd-logo@2x.png");
+		-webkit-background-size:	123px 35px;
+		-khtml-background-size:		123px 35px;
+		-moz-background-size:		123px 35px;
+		-ms-background-size:		123px 35px;
+		-o-background-size:			123px 35px;
+		background-size:			123px 35px;
+	}
+		#logo > a::before{
+			background-image: url("../img/ocd-logo-tall@2x.png");
+			-webkit-background-size:	77px 73px;
+			-khtml-background-size:		77px 73px;
+			-moz-background-size:		77px 73px;
+			-ms-background-size:		77px 73px;
+			-o-background-size:			77px 73px;
+			background-size:			77px 73px;
+		}
+}
