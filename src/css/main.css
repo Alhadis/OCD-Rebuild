@@ -6,10 +6,11 @@ html, body{
 }
 
 body{
-	overflow: hidden;
-	padding-top: 3.125em;
-	padding-bottom:	11.25em;
+	padding: 3.125em 0 5.125em;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
 }
+
 
 
 
@@ -33,6 +34,7 @@ body{
 		top:	0;
 		height:	100%;
 		font-size: 1em;
+		padding: 0;
 		z-index: 10;
 	}
 		#logo > a{
@@ -55,6 +57,11 @@ body{
 		font-weight: 600;
 		height: 100%;
 	}
+		#topnav a:link,
+		#topnav a:visited{
+			color: #fff;
+		}
+
 		#topnav .active > a:link,
 		#topnav .active > a:visited{
 			color: #009ed5;
@@ -82,122 +89,147 @@ body{
 	}
 
 
+/** Main wrapper */
 main{
-	
+	position: relative;
+	z-index: 2;
+	max-width: 50em;
+	margin: 0 auto;
 }
-	/** "Hello, we are OCD" */
-	.oc-hello{
-		display: inline-block;
-		max-width: 12em;
-		margin: 0 auto;
-		white-space: nowrap;
-	}
-		.oc-hello > i{
-			display: inline-block;
-			padding-right: .15em;
-		}
-			.oc-hello > i:first-child{
-				font-size: 1.46em;
-			}
-
-		.oc-hello > strong{
-			font: 600 .65em/.7 "Open Sans";
-			color: #009ed5;
-			text-transform: uppercase;
-			display: block;
-		}
-		
-		.oc-hello + p{
-			margin: .5em auto .25em;
-			text-align: left;
-			max-width: 18em;
-		}
-			.oc-hello + p > span{
-				display: block;
-				text-align: right;
-			}
-
-		.oc-hello + p ~ p{
-			font-size: .8em;
-			margin: 0 1em;
-		}
-
-	
 	/** WordPress content */
 	#wp-content{
-		padding: 2em;
+		padding: 1em;
 		line-height: 1.5;
 	}
-		/** Golden call-to-action button centred beneath circled content. */
-		#call-to-action{
-			margin-top: 1em;
-			position: absolute;
-			left: 50%;
-			-webkit-transform:	translateX(-50%);
-			-moz-transform:		translateX(-50%);
-			-ms-transform:		translateX(-50%);
-			-o-transform:		translateX(-50%);
-			transform:			translateX(-50%);
+		/** Page heading */
+		#wp-content h2{
+			border-bottom-width: 1px;
 		}
 
 
-	/** Centred circle */
-	body.circle{
-		position: absolute;
-		width:	100%;
-		height:	100%;
-		text-align: center;
-		white-space: nowrap;
-		min-height: 36.25em;
+
+/** Centred circle */
+body.circle{
+	position: absolute;
+	overflow: hidden;
+	width:	100%;
+	height:	100%;
+	text-align: center;
+	white-space: nowrap;
+	min-height: 30em;
+	padding-bottom: 5.15em;
+	color: #fff;
+}
+	/** Centring aide */
+	body.circle::after{
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
 	}
-		/** Centring aide */
-		body.circle::after{
+
+	/** Inline our <main> element for proper centring. */
+	body.circle > main{
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+		color: #fff;
+		width: 100%;
+		max-width: 22em;
+		text-shadow: .05em .05em .05em #171717;
+	}
+		/** Generate a neat background circle to sit behind our snazzy content. */
+		body.circle > main::after{
 			content: "";
-			display: inline-block;
-			vertical-align: middle;
-			height: 100%;
-			width: 0;
+			display: block;
+			position: absolute;
+			background: #171717;
+			z-index: -1;
+			top:	50%;
+			left:	50%;
+			width:	100%;
+			padding-top: 100%;
+
+			-webkit-transform:	translate(-50%, -50%);
+			-moz-transform:		translate(-50%, -50%);
+			-ms-transform:		translate(-50%, -50%);
+			-o-transform:		translate(-50%, -50%);
+			transform:			translate(-50%, -50%);
+	
+			-webkit-border-radius:	50%;
+			-moz-border-radius:		50%;
+			border-radius:			50%;
 		}
 
-		/** Inline our <main> element for proper centring. */
-		body.circle > main{
-			display: inline-block;
-			vertical-align: middle;
-			white-space: normal;
-			position: relative;
-			color: #fff;
-			width: 100%;
-			max-width: 22em;
-			text-shadow: .05em .05em .05em #171717;
-			z-index: 2;
+
+		/** (Snazzy) content */
+		body.circle > main > #wp-content{
+			padding: 0 1em;
 		}
-			/** Generate a neat background circle to sit behind our snazzy content. */
-			body.circle > main::after{
-				content: "";
-				display: block;
-				position: absolute;
-				background: #171717;
-				z-index: -1;
-				top:	50%;
-				left:	50%;
-				width:	100%;
-				padding-top: 100%;
-		
-				-webkit-transform:	translate(-50%, -50%);
-				-moz-transform:		translate(-50%, -50%);
-				-ms-transform:		translate(-50%, -50%);
-				-o-transform:		translate(-50%, -50%);
-				transform:			translate(-50%, -50%);
-		
-				-webkit-border-radius:	50%;
-				-moz-border-radius:		50%;
-				border-radius:			50%;
+			body.circle h2{
+				font-size: 2.875em;
+				padding-bottom: .1em;
+				text-indent: 0;
 			}
 
-			/** (Snazzy) content */
-			body.circle > main > #wp-content{
-				padding: 1em 1em 0;
+			body.circle p.big{
+				font-size: 1em;
+				margin: .5em auto .25em;
 			}
+				body.circle p.big ~ p{
+					font-size: .8em;
+					margin: 0 1em;
+				}
+			
+			body.circle > main > #wp-content ul,
+			body.circle > main > #wp-content ol{
+				text-align: left;
+				font-size: .8em;
+				margin: 1em;
+			}
+
+
+
+/** "Neo-style" pages are those reflecting the would-be redesign of the OCD website. */
+.neo #wp-content{
+}
+	/** Page heading */
+	.neo main h2{
+		background: #000;
+		color: #fff;
+		font: 2em "Open Sans";
+		position: relative;
+		padding: .2em 0;
+		border: 0;
+	}
+		/** Generated black background */
+		.neo main h2::after{
+			content: "";
+			position: absolute;
+			left:	-999em;
+			right:	-999em;
+			top:	0;
+			bottom:	0;
+			z-index: -1;
+			background-color: inherit;
+		}
+
+	.neo h3{
+		font: 600 1.5em "Open Sans";
+		margin: .25em 0;
+	}
+
+
+	/** Italicised aqua writing displayed beneath heading. */
+	.neo p.big{
+		color: #24bbd4;
+		font: italic 1.5em/1.3 "Open Sans";
+		margin: .5em 0 .25em;
+	}
+		.neo p.big + p{
+			margin-top: .25em;
+		}
 
 
 
@@ -206,44 +238,43 @@ main{
 #bottom{
 	position: absolute;
 	text-align: center;
+	overflow: hidden;
 	z-index: 5;
 	bottom:	0;
 	left:	0;
 	right:	0;
-	height:	11.25em;
+	height:	5.125em;
 	background: #000;
 	padding: .5em;
 	color: #fff;
 }
+	/** AANA Strategic Partner */
 	#strategic-partner{
 		font: italic 1em Georgia, serif;
-		margin-bottom: 1em;
+		margin: .25em 0;
 	}
-
-
-	#our-clients{
-		margin: 0 -.25em;
-		padding: 0 1.5em;
-	}
+		#strategic-partner > abbr{
+			vertical-align: baseline;
+			margin-left: .3em;
+		}
 
 
 	/** Contact details */
 	#bottom > address{
 		font-style: normal;
-		border-top: 1px solid #323131;
 		white-space: nowrap;
 		text-align: left;
 		margin: 0 -.5em;
+		padding-top: .5em;
 	}
 		#bottom > address > *{
 			display: inline-block;
 			vertical-align: top;
 			width: 50%;
-			padding: .5em;
+			padding: 0 .5em .5em;
 		}
 
 		.social-links{
-			overflow: hidden;
 			font: italic 1em Georgia, serif;
 			padding-right: 0; 
 		}
@@ -275,6 +306,7 @@ main{
 					left:	0;
 					width:	100%;
 					margin-top: -.5em;
+					color:	#fff;
 				}
 					.social-links > a:hover{
 						background: #009ed5;
@@ -314,7 +346,6 @@ main{
 						content: "\33d2";
 						color: #e3b517;
 						font-size: .77em;
-						line-height: 1.11;
 						-webkit-transform:	scaleX(.95);
 						-moz-transform:		scaleX(.95);
 						-ms-transform:		scaleX(.95);
@@ -335,8 +366,8 @@ main{
 			}
 			.phone-number > a{
 				padding-left: .25em;
+				color: inherit;
 			}
-
 
 
 
@@ -469,32 +500,77 @@ main{
 				#topnav > ul > li > a:hover{
 					background: #686868;
 				}
+
+/** "Neo-style" pages */
+.neo #wp-content{
+	padding-top: 0;
 }
+	.neo h3{
+		font-size: 1.5em;
+		line-height: 1.2;
+		padding-bottom: .5em;
+	}
+}
+
+
+
+
 
 
 /*=============================================================================*
 	2. TABLETS (600+)
 ===============================================================================*/
 @media (min-width: 37.5em){
-	
+
+h2{
+	font-size: 3.625em;
+	padding-bottom: 0;
+}
+
+h3{
+	font-size: 1.6em;
+}
+
+p.big{
+	font-size: 1.4375em;
+}
+
+
+/** "Spotlight" layout */
+.body.circle{
+}
 	/** Expand the circle */
 	body.circle > main{
 		font-size: 1.2em;
 	}
-		
 
 
-	/** Increase the size of our footer elements. */
-	.social-links > a{
-		font-size: 2.25em;
+	/** Footer */
+	#bottom{
+		text-align: left;
 	}
-	#our-clients > h3{
-		font-size: 1.25em;
-	}
-	#our-clients > .rotator{
-		font-size: 4.5em;
-		margin: 0 auto;
-	}
+		#strategic-partner{
+			margin-left: .5em;
+		}
+
+
+		/** Contact details */
+		#bottom > address{
+			position: relative;
+			padding-left: .3em;
+		}
+			/** Circled social channel icons */
+			.social-links > a{
+				font-size: 2em;
+			}
+
+			/** Our awesome phone number */
+			.phone-number{
+				position: absolute;
+				bottom: 100%;
+				right: .5em;
+				margin-bottom: -.5em;
+			}
 }
 
 
@@ -541,6 +617,7 @@ main{
 
 		#topnav > ul,
 		#topnav > ul > li{
+			max-height: none !important;
 			display: inline-block;
 			vertical-align: top;
 			margin: 0;
@@ -549,29 +626,109 @@ main{
 			#topnav > ul > li > a{
 				display: block;
 				padding: .875em 1em;
+				color: #fff;
+
+				-webkit-transition:	.06s linear color .06s;
+				-moz-transition:	.06s linear color .06s;
+				-o-transition:		.06s linear color .06s;
+				transition:			.06s linear color .06s;
 			}
+				#topnav > ul > li > a:hover{
+					color: #009ed5;
+				}
+
+
+#wp-content{
+	padding: 1.5em 0 0;
+}
+	h2{
+		font-size: 5.625em;
+		text-indent: .075em;
+		padding-bottom: 0;
+	}
+
+	p.big{
+		font-size: 1.625em;
+		line-height: 1.2em;
+		margin: .6em 0;
+	}
 
 
 
-
+/** "Spotlight" layout */
+body.circle{
+	padding: 4.375em 1em 1em;
+}
 	body.circle > main{
 		font-size: 1.64em;
 	}
-		.oc-hello + p ~ p{
-			font-size: 16px;
-			font-size: 1rem;
-			margin: 0 2em;
+		body.circle > main > #wp-content{
+			margin-top: -1em;
 		}
 
 
-	#bottom{
-		background: none;
-		text-align: left;
+/** "Neo-style" pages */
+.neo{
+	padding-bottom: 7.125em;
+}
+	.neo main h2{
+		font-size: 3em;
+		margin: -.5em auto .35em;
 	}
-		#bottom > address{
-			border-top: 0;
+		.neo p.big + p{
+			margin: 1em 0;
+		}
+
+	.neo p.big,
+	.neo h3{
+		font-size: 2em;
+	}
+
+
+
+#bottom{
+	background: none;
+	text-align: right;
+	color: inherit;
+	height: auto;
+	border-top: 1px solid #999;
+	padding-right: 1em;
+}
+	.circle > #bottom{
+		border-top: 0;
+	}
+	
+
+
+	/** AANA Strategic Partner */
+	#strategic-partner{
+		font-size: 1.125em;
+		margin-bottom: .89em;
+	}
+		#strategic-partner > abbr{
+			margin-left: .8em;
+		}
+
+
+	#bottom > address{
+		border-top: 0;
+		text-align: right;
+	}
+		.social-links > a{
+			font-size: 2.25em;
+		}
+
+		.phone-number{
+			display: none !important;
 		}
 }
+
+
+/*=============================================================================*
+	3a. LANDSCAPE: Ensure "circled" content won't overlap footer elements
+===============================================================================*/
+@media (orientation: landscape){						body.circle{	min-height: 31em;	}}
+@media (orientation: landscape) and (min-width: 64em){	body.circle{	min-height: 42em;	}}
 
 
 

@@ -1,6 +1,6 @@
 Online Circle Digital - WordPress Theme Rebuild
 
-=======
+---
 
 A long-awaited reincarnation of what the site's original WordPress theme should have been.
 

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+/** COMMENCE BULLSHIT STYLING */
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none!important}a{background-color:transparent}a:active,a:hover{outline:0}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+*{
+	box-sizing: border-box;
+}
+html{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+
+	position: absolute;
+	width:		100%;
+	min-height:	100%;
+	overflow-x:	hidden;
+	color: #fff;
+	background: linear-gradient(#1d1f20, #2f3031);
+	background-size: cover;
+}
+body{
+	max-width: 30em;
+	margin: 2em auto;
+	padding: 0 1em;
+}
+	body > header{
+		position: fixed;
+		padding: .5em;
+		top:	0;
+		left:	0;
+		font-variant: small-caps;
+	}
+#testimonials{
+	background: rgba(255,255,255,.11);
+	counter-reset: slide-index;
+}
+	#testimonials > li{
+		counter-increment: slide-index;
+	}
+		#testimonials > li::before{
+			content: counter(slide-index) ". ";
+		}
+/** END BULLSHIT STYLES. */
+
+
+#testimonials{
+	list-style: none;
+	padding: 0;
+	position: relative;
+	white-space: nowrap;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+	#testimonials,
+	#testimonials > li{
+		width: 100%;
+		margin: 0;
+
+		/** Force hardware acceleration */
+		-webkit-backface-visibility:	hidden;
+		-moz-backface-visibility:		hidden;
+		backface-visibility:			hidden;
+	}
+
+	/** Individual slide */
+	#testimonials > li{
+		padding: .5em 1em;
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+		text-align: center;
+
+		font-size: 16px;
+		font-size: 1rem;
+		line-height: normal;
+
+		will-change: opacity, transform, margin-right;
+		-webkit-transition: 2s ease opacity, 0s step-end -webkit-transform	2s, 0s step-end margin-right;
+		-moz-transition:	2s ease opacity, 0s step-end -moz-transform		2s, 0s step-end margin-right;
+		-o-transition:		2s ease opacity, 0s step-end -o-transform		2s, 0s step-end margin-right;
+		transition:			2s ease opacity, 0s step-end transform			2s, 0s step-end margin-right;
+
+		opacity: 0;
+		margin-right: -100%;
+		-webkit-transform:	translateX(-100%);
+		-moz-transform:		translateX(-100%);
+		-ms-transform:		translateX(-100%);
+		-o-transform:		translateX(-100%);
+		transform:			translateX(-100%);
+	}
+		/** Transform reset */
+		#testimonials,
+		#testimonials > li.active,
+		#testimonials > li.active ~ li{
+			-webkit-transform:	translateX(0);
+			-moz-transform:		translateX(0);
+			-ms-transform:		translateX(0);
+			-o-transform:		translateX(0);
+			transform:			translateX(0);
+		}
+
+		/** Currently displayed slide */
+		#testimonials > li.active{
+			opacity: 1;
+			margin-right: 0;
+			-webkit-transition-delay:	0s, 0s, 2s;
+			-moz-transition-delay:		0s, 0s, 2s;
+			-o-transition-delay:		0s, 0s, 2s;
+			transition-delay:			0s, 0s, 2s;
+		}
+
+		/** Every slide to the RIGHT of the currently displayed slide. */
+		#testimonials > li.active ~ li{
+			margin-right: -100%;
+			-webkit-transition-delay:	0s, 2s, 2s;
+			-moz-transition-delay:		0s, 2s, 2s;
+			-o-transition-delay:		0s, 2s, 2s;
+			transition-delay:			0s, 2s, 2s;
+		}
+</style>
+</head>
+
+
+<body>
+	<header>Press the left or right arrow keys to change slides.</header>
+	<ul id="testimonials">
+		<li>Praesent tempor luctus ex, non imperdiet massa dapibus non. Phasellus sollicitudin malesuada convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse eget cursus eros, vel imperdiet nisi. Quisque ultrices elit nisi, a pellentesque orci lacinia a. Fusce in enim blandit, ornare neque ut, tempor tellus. Maecenas lacinia dapibus tortor tristique gravida. Etiam ut metus porttitor, placerat sapien a, vestibulum dui. Donec ultricies hendrerit felis, et ultricies felis sodales eu.</li>
+		<li>Etiam dignissim dapibus lorem sit amet ullamcorper. Phasellus ornare sagittis neque, sed consequat nisi laoreet id. Curabitur iaculis porta risus, at efficitur libero aliquam consectetur. Aliquam at nulla interdum nisi interdum efficitur a vitae enim. Fusce tincidunt erat turpis, eu ornare nisl commodo non. Cras convallis elit eu magna eleifend, in pulvinar purus pellentesque. Nunc in tincidunt felis, sit amet aliquam magna.</li>
+		<li class="active">Etiam elementum ultrices nisl vel facilisis. Vestibulum feugiat sollicitudin viverra. Vestibulum mattis mattis nisi a eleifend. Vestibulum ultrices turpis facilisis, tristique tortor mollis, pretium justo. Proin lobortis augue non tincidunt vestibulum. Mauris feugiat, ligula et lacinia tristique, tortor tellus dignissim felis, in ultricies tellus orci venenatis risus. In tincidunt, nulla eget laoreet dignissim, urna magna dapibus sapien, sed interdum turpis eros hendrerit metus. Ut dictum facilisis ultricies. Proin sit amet purus sem. Mauris id orci neque. Morbi purus odio, facilisis quis molestie quis, luctus ac mauris. Aenean dignissim sapien vitae ullamcorper tincidunt. Aliquam erat volutpat. Phasellus ut magna molestie, pretium lectus ut, convallis justo.</li>
+		<li>Integer neque elit, mollis non arcu sed, lobortis porta ipsum. Praesent vel diam sed erat consectetur ultricies ut id sapien. In convallis est non lorem auctor vehicula. Sed eget risus et lacus mattis volutpat eu ac nisl. Maecenas tellus odio, viverra in leo ac, semper accumsan quam. Praesent dictum, est vitae posuere gravida, metus arcu facilisis nibh, in tincidunt nisl eros dapibus nibh. Aliquam a ipsum imperdiet, lobortis massa vitae, posuere justo. Morbi eget sollicitudin mauris, et scelerisque ligula. Vivamus eget nibh dolor. Donec eget tincidunt nunc, congue eleifend lectus. Sed gravida vestibulum felis, pretium molestie nunc tristique id. Ut eleifend nisi tellus, vel rutrum arcu iaculis eget. Morbi in lorem a sem imperdiet convallis.</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio est, tincidunt sagittis leo vitae, rutrum ultricies nulla. Aenean tristique odio sit amet varius pulvinar. Quisque mattis metus tellus, at congue nulla euismod non. Duis vel nisl ut velit ultrices euismod. Sed vulputate fermentum neque, ac pulvinar ex. Cras at sapien aliquam, vehicula orci ut, feugiat turpis. Nulla consequat congue mauris sed fringilla. Donec velit leo, facilisis a pulvinar a, sodales non quam. Proin id nisl eget tortor dictum commodo in vitae libero.</li>
+	</ul>
+
+
+	<script type="text/javascript">
+		HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+		(function(o){
+			var _slide			=	2;
+			var testimonials	=	document.getElementById("testimonials");
+
+			Object.defineProperty(o, "slide", {
+				get:	function(){ return _slide; },
+				set:	function(i){
+					if(i instanceof HTMLElement){
+						for(var n = 0, l = i.parentNode.children.length; n < l; ++n){
+							if(i.parentNode.children[n] === i){
+								i	=	n;
+								break;
+							}
+						}
+					}
+					i	=	+i || 0;
+
+					testimonials.children.forEach(function(i){
+						i.classList.remove("active");
+					});
+					var numSlides	=	testimonials.children.length;
+						 if(i > numSlides - 1)	i	=	0;
+					else if(i < 0)				i	=	numSlides - 1;
+					testimonials.children[i].classList.add("active");
+					_slide	=	i;
+				}
+			});
+		}(window));
+
+
+
+		window.addEventListener("keyup", function(e){
+			switch(e.keyCode){
+				case 39:{++window.slide;	break;}
+				case 37:{--window.slide;	break;}
+			}
+		});
+	</script>
+</body>
+</html>
