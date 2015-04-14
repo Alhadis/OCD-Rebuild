@@ -1,0 +1,42 @@
+#ocd-offices > div > h3{
+	font: bold 1em "Open Sans";
+}
+
+#ocd-offices .btn{
+	margin-top: .45em;
+}
+
+
+/** Hide some Schema.org-specific elements */
+#ocd-meta,
+#ocd-melbourne [itemprop="addressLocality"] ~ span{
+	display: none !important;
+}
+	#ocd-melbourne [itemprop="addressLocality"]{
+		display: block;
+	}
+
+#ocd-sydney data + span::after{
+	content: "";
+	display: block;
+}
+
+
+@media screen and (min-width: 37.5em){
+#ocd-offices{
+	display: table;
+	width: 100%;
+}
+	#ocd-offices > div{
+		display: table-cell;
+		vertical-align: top;
+		width: 50%;
+		padding-left: 1em;
+	}
+		#ocd-offices > div > h3{
+			font-size: 1.25em;
+		}
+	#ocd-offices > div:first-of-type{
+		padding-left: 0;
+	}
+}

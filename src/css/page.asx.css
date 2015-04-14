@@ -1,0 +1,131 @@
+#wp-content{
+	font-size: .9em;
+	line-height: 1.45;
+}
+	h2{
+		font: 2em "Open Sans";
+		border: 0;
+		margin: .15em 0 .5em;
+	}
+	
+	h3{
+		font: 600 1.25em "Open Sans";
+		margin-bottom: 0;
+		padding: 0;
+	}
+
+	p{
+		font-size: 1em;
+	}
+
+
+	/** Make the telephone link's formatting less... erm, distracting. */
+	a[href^="tel:"]{
+		color: inherit;
+		font-weight: inherit;
+	}
+		a[href^="tel:"]:hover{
+			color: #009ed5;
+		}
+
+
+	/** Contact details for article's authors */
+	#asx-authors{
+		font-style: normal;
+	}
+		#asx-authors > div{
+			margin: 1.5em 0 1em;
+		}
+			#asx-authors > div > abbr{
+				display: block;
+			}
+
+/*=============================================================================*
+	1. SMARTPHONES (<= 600)
+===============================================================================*/
+@media not all and (min-width: 37.5em){
+	.next.gold{
+		display: block;
+		font-size: 1em;
+	}
+
+	/** Button for downloading infographic that's situated directly underneath page's heading. */
+	#download-infographic{
+		position: relative;
+		white-space: normal;
+	}
+		#download-infographic::before{
+			padding-right: 1em;
+			margin-right: 0;
+		}
+		#download-infographic > span{
+			display: inline-block;
+			vertical-align: top;
+		}
+}
+
+/*=============================================================================*
+	1.5. TWEAKPOINT (<= 600)
+===============================================================================*/
+@media not all and (min-width: 32em){
+	#download-infographic > span{
+		max-width: 15em;
+	}
+}
+
+
+/*=============================================================================*
+	2. TABLETS (600+)
+===============================================================================*/
+@media (min-width: 37.5em){
+
+/** Contact details for article's authors */
+#asx-authors{
+	text-align: right;
+}
+	/** Clearfix */
+	#asx-authors::after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	/** Jeff's column */
+	#asx-authors > div{
+		float: left;
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+	}
+
+
+	/** Rachel's column */
+	#asx-authors > div + div{
+		float: none;
+	}
+}
+
+
+
+/*=============================================================================*
+	2.5. TABLETS: Tweakpoint (672+)
+===============================================================================*/
+@media (min-width: 42em){
+h2{
+	font-size: 2.5em;
+}
+h3{
+	font-size: 1.5em;
+}
+}
+
+
+
+/*=============================================================================*
+	3. DESKTOP (1024+)
+===============================================================================*/
+@media (min-width: 64em){
+#wp-content{
+	font-size: 1em;
+}
+}

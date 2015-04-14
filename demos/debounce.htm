@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Debounced Functions</title>
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+
+
+
+/**
+ * Stops a function from firing too quickly.
+ *
+ * This method returns a copy of the original function that runs only after the designated
+ * number of milliseconds have elapsed. Useful for throttling onResize handlers.
+ *
+ * @param {Number} limit - Threshold to stall execution by, in milliseconds.
+ * @param {Boolean} soon - If TRUE, will call the function *before* the threshold's elapsed, rather than after.
+ * @return {Function}
+ */
+Function.prototype.debounce	=	function(limit, soon){
+	var fn		=	this,
+		limit	=	limit < 0 ? 0 : limit,
+		started, context, args, timer,
+
+
+		delayed	=	function(){
+
+			/** Get the time between now and when the function was first fired. */
+			var timeSince	=	Date.now() - started;
+
+			if(timeSince >= limit){
+				if(!soon) fn.apply(context, args);
+				if(timer) clearTimeout(timer);
+				timer = context = args	=	null;
+			}
+
+			else timer = setTimeout(delayed, limit - timeSince);
+		};
+
+
+	/** Debounced copy of the original function. */
+	return function(){
+		context		=	this,
+		args		=	arguments;
+
+		if(!limit)
+			return fn.apply(context, args);
+
+		started	=	Date.now();
+		if(!timer){
+			if(soon) fn.apply(context, args);
+			timer	=	setTimeout(delayed, limit);
+		}
+	};
+};
+
+
+</script>
+
+
+	<script type="text/javascript">
+		var debounce = function(func, wait, immediate){
+			var timeout, args, context, timestamp, result;
+		
+			var later = function() {
+				var last = Date.now() - timestamp;
+		
+				if (last < wait && last > 0) {
+					timeout = setTimeout(later, wait - last);
+				} else {
+					timeout = null;
+					if (!immediate) {
+						result = func.apply(context, args);
+						if (!timeout) context = args = null;
+					}
+				}
+			};
+		
+			return function() {
+				context = this;
+				args = arguments;
+				timestamp = Date.now();
+				var callNow = immediate && !timeout;
+				if (!timeout) timeout = setTimeout(later, wait);
+				if (callNow) {
+					result = func.apply(context, args);
+					context = args = null;
+				}
+		
+				return result;
+			};
+		};
+
+
+		var WTF	=	{
+			please:	function(str){
+				console.log(str);
+			}
+		};
+		
+		var onResize	=	function(e){
+			console.log(arguments);
+			console.log(window.innerWidth + " × " + window.innerHeight);
+		};
+
+		
+		window.performance	=	window.performance || {
+			now:	function(){ return Date.now(); }
+		};
+
+		var start	=	window.performance.now();
+		//onResize	=	debounce(onResize, 2000, true);
+		onResize	=	onResize.debounce(2000);
+
+		for(var i = 0; i < 9999; ++i){
+			onResize();
+			setTimeout(onResize, 20);
+			setTimeout(onResize, 40);
+			setTimeout(onResize, 60);
+		}
+		var end		=	window.performance.now();
+		console.info(end - start);
+
+
+		window.addEventListener("resize", onResize);
+	</script>
+
+</body>
+</html>

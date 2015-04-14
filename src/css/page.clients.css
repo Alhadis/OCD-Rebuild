@@ -1,0 +1,64 @@
+body{
+	padding-bottom: 0;
+}
+main{
+	max-width: none;
+}
+h2{
+	text-align: center;
+	border: 0;
+}
+
+/** Hide the page's running footer for some reason. */
+#bottom{
+	display: none;
+}
+
+
+/** Grid of clients */
+#clients-list{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+	/** Clearfix */
+	#clients-list::after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	#clients-list > li{
+		border: 1px solid #c1c1c1;
+		width: 20%;
+		float: left;
+		position: relative;
+	}
+		#clients-list > li::before{
+			content: "";
+			display: block;
+			padding-top: 100%;
+		}
+		
+		#clients-list > li > img{
+			position: absolute;
+			top:	50%;
+			left:	50%;
+			max-width: 45%;
+			-webkit-transform:	translate(-50%, -50%);
+			-moz-transform:		translate(-50%, -50%);
+			-ms-transform:		translate(-50%, -50%);
+			-o-transform:		translate(-50%, -50%);
+			transform:			translate(-50%, -50%);
+		}
+		
+		#clients-list > li > .details{
+			position: absolute;
+			top:	0;
+			left:	0;
+			right:	0;
+			bottom:	0;
+			z-index: 2;
+			background: #009ed5;
+			color: #fff;
+		}

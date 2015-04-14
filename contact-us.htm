@@ -1,78 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Online Circle Digital &bull; Contact Us</title>
+<!--[if lt IE 9]><script src="src/js/compat/ie.lte-8.js"></script><![endif]-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="initial-scale=1, minimum-scale=1" />
+<meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no" />
+<title>Online Circle Digital &bull; Contact Us</title>
 
-<link rel="stylesheet" type="text/css" href="src/css/fonts.css" media="all" />
-<link rel="stylesheet" type="text/css" href="src/css/global.css" media="all" />
-<link rel="stylesheet" type="text/css" href="src/css/main.css" media="all" />
-
-<style type="text/css">
-#ocd-offices > div > h3{
-	font: bold 1em "Open Sans";
-}
-
-#ocd-offices .btn{
-	margin-top: .45em;
-}
-
-
-/** Hide some Schema.org-specific elements */
-#ocd-meta,
-#ocd-melbourne [itemprop="addressLocality"] ~ span{
-	display: none !important;
-}
-	#ocd-melbourne [itemprop="addressLocality"]{
-		display: block;
-	}
-
-#ocd-sydney data + span::after{
-	content: "";
-	display: block;
-}
-
-
-@media screen and (min-width: 37.5em){
-#ocd-offices{
-	display: table;
-	width: 100%;
-}
-	#ocd-offices > div{
-		display: table-cell;
-		vertical-align: top;
-		width: 50%;
-		padding-left: 1em;
-	}
-		#ocd-offices > div > h3{
-			font-size: 1.25em;
-		}
-	#ocd-offices > div:first-of-type{
-		padding-left: 0;
-	}
-}
-</style>
+<link rel="stylesheet" type="text/css" href="src/css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="src/css/global.css" />
+<link rel="stylesheet" type="text/css" href="src/css/main.css" />
+<link rel="stylesheet" type="text/css" href="src/css/page.contact.css" />
 </head>
 
 
 <body>
 
 	<header id="top">
-		<h1 id="logo"><a href="#">Online Circle Digital</a></h1>
+		<h1 id="logo"><a href="index.htm">Online Circle Digital</a></h1>
 
 		<nav id="topnav">
-			<input class="menu control" type="checkbox" id="topnav_0" checked="checked" />
-			<label class="menu disclosure" for="topnav_0">Menu</label>
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Clients</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">Careers</a></li>
-				<li><a href="#">ASX</a></li>
-				<li><a href="#">Contact Us</a></li>
+			<input class="control" type="checkbox" id="topnav_0" checked="checked" />
+			<label class="disclosure" for="topnav_0">Menu</label>
+			<ul class="fold">
+				<li><a href="index.htm">Home</a></li>
+				<li><a href="about-us.htm">About</a></li>
+				<li><a href="clients.htm">Clients</a></li>
+				<li><a href="http://marketingeasy.net/" target="_blank">Blog</a></li>
+				<li><a href="resources.htm">Resources</a></li>
+				<li><a href="careers.htm">Careers</a></li>
+				<li><a href="asx.htm">ASX</a></li>
+				<li class="active"><a href="contact-us.htm">Contact Us</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -89,7 +46,7 @@
 				<div id="ocd-meta">
 					<span itemprop="name">Online Circle Digital</span>
 					<b>Homepage:</b> <a itemprop="url" href="http://theonlinecircle.com/">http://theonlinecircle.com/</a>
-					<img itemprop="logo" src="/src/img/ocd-logo-vcf.png" alt="Online Circle Digital" />
+					<img itemprop="logo" src="src/img/ocd-logo-vcf.png" alt="Online Circle Digital" />
 				</div>
 
 				<div id="ocd-melbourne" itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
@@ -150,22 +107,6 @@
 	<footer id="bottom">
 		<div id="strategic-partner">Strategic Partner <abbr class="r aana" title="Australian Association of National Advertisers">AANA</abbr></div>
 
-
-		<aside id="our-clients">
-			<h3>Meet some of our clients:</h3>
-
-			<div class="rotator">
-				<div class="n prev" role="button">Previous</div>
-				<div class="n next" role="button">Next</div>
-				<ul>
-					<li class="active"><img src="src/img/uploads/our-clients-1.png" alt="" /></li>
-					<li><img src="src/img/uploads/our-clients-2.png" alt="" /></li>
-					<li><img src="src/img/uploads/our-clients-3.png" alt="" /></li>
-				</ul>
-			</div>
-		</aside>
-
-
 		<address>
 			<span class="social-links">
 				<a class="gp" href="https://plus.google.com/116963871548252020984?prsrc=3" target="_blank">Google+</a>
@@ -178,8 +119,6 @@
 	</footer>
 
 
-	<!--[if lt IE 9]><script type="text/javascript" src="src/js/jquery-1.11.1.js"></script><![endif]-->
-	<!--[if gte IE 9]><!--><script type="text/javascript" src="src/js/jquery-2.1.1.js"></script><!--<![endif]-->
 	<script type="text/javascript" src="src/js/utils.js"></script>
 	<script type="text/javascript" src="src/js/main.js"></script>
 </body>
