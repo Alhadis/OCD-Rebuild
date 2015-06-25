@@ -1,39 +1,8 @@
-/**
- * Array.forEach
- * 
- * Production steps of ECMA-262, Edition 5, 15.4.4.18
- * @link http://es5.github.io/#x15.4.4.18 - Reference
- */ 
-if(!Array.prototype.forEach){
-
-	Array.prototype.forEach = function(callback, thisArg){
-		if(typeof callback !== "function")	throw new TypeError(callback + " is not a function");
-		if(this == null)					throw new TypeError('"this" is null or undefined.');
-
-		var	kValue,
-			k	=	0,
-			O	=	Object(this),
-			len	=	O.length >>> 0;
-
-		while(k < len){
-			if(k in O) callback.call(thisArg, O[k], k, O);
-			++k;
-		}
-	};
-}
-
-/** DOMTokenList polyfill for IE8-9 */
-window.DOMTokenList||function(){var t="defineProperty"in Object||"__defineGetter__"in Object.prototype||null,e=function(e,n,i,r){Object.defineProperty?Object.defineProperty(e,n,{configurable:!1===t?!0:!!r,get:i}):e.__defineGetter__(n,i)};if(t)try{e({},"support")}catch(n){t=!1}var i=function(t,n){var i,r=[],l={},s=0,o=0,a=function(){if(s>=o)for(;s>o;++o)(function(t){e(this,t,function(){return c.call(this),r[t]},!1)}).call(this,o)},c=function(){var e;if(arguments.length)for(e=0;e<arguments.length;++e)if(/\s/.test(arguments[e])){var o=new SyntaxError('String "'+arguments[e]+'" contains an invalid character');throw o.code=5,o.name="InvalidCharacterError",o}if(i!==t[n]){r=(""+t[n]).replace(/^\s+|\s+$/g,"").split(/\s+/),l={};for(var e=0;e<r.length;++e)l[r[e]]=!0;s=r.length,a.call(this)}};return c.call(this),e(this,"length",function(){return c.call(this),s}),this.toLocaleString=this.toString=function(){return c.call(this),r.join(" ")},this.item=function(t){return c.call(this),r[t]},this.contains=function(t){return c.call(this),!!l[t]},this.add=function(){c.apply(this,arguments);for(var e,i=0;i<arguments.length;++i)e=arguments[i],l[e]||(r.push(e),l[e]=!0);s!==r.length&&(s=r.length>>>0,t[n]=r.join(" "),a.call(this))},this.remove=function(){c.apply(this,arguments);for(var e={},i=0;i<arguments.length;++i)e[arguments[i]]=!0,delete l[arguments[i]];for(var o=[],i=0;i<r.length;++i)e[r[i]]||o.push(r[i]);r=o,s=o.length>>>0,t[n]=r.join(" "),a.call(this)},this.toggle=function(t,e){return c.apply(this,[t]),void 0!==e?e?(this.add(t),!0):(this.remove(t),!1):l[t]?(this.remove(t),!1):(this.add(t),!0)},function(t,e){if(e)for(var n="item contains add remove toggle toString toLocaleString".split(" "),i=0;7>i;++i)e(t,n[i],{enumerable:!1})}(this,Object.defineProperty),this};i.polyfill=!0,window.DOMTokenList=i;var r=function(n,l,s){e(n.prototype,l,function(){var n,o="__defining_"+l+"__";if(this[o])return n;if(this[o]=!0,!1===t){for(var a,c=r.mirror=r.mirror||document.createElement("div"),h=c.childNodes,u=h.length,f=0;u>f;++f)if(h[f].reflectedElement===this){a=h[f];break}a||(a=document.createElement("div"),c.appendChild(a)),n=i.call(a,this,s)}else n=new i(this,s);return e(this,l,function(){return n}),delete this[o],n},!0)};r(Element,"classList","className"),r(HTMLLinkElement,"relList","rel"),r(HTMLAnchorElement,"relList","rel"),r(HTMLAreaElement,"relList","rel")}();
-
-
 /** DOM Extensions */
 NodeList.prototype.forEach				=
 HTMLCollection.prototype.forEach		=	Array.prototype.forEach;
 if(window.StaticNodeList)
 	StaticNodeList.prototype.forEach	=	Array.prototype.forEach;
-
-Date.now				=	Date.now || function(){return +new Date};
-String.prototype.trim	=	String.prototype.trim || function(){return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, "");};
 
 
 /** Which property to use when getting/setting an HTMLElement's textual content (thanks for NaN, IE8) */
