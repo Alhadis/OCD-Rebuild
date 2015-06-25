@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-AU">
 <head>
-<!--[if lt IE 9]><script src="src/js/compat/ie.lte-8.js"></script><![endif]-->
+<!--[if lte IE 9]><script src="src/js/ie.lteIE9.js"></script><![endif]-->
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no" />
 <title>Online Circle Digital &bull; Clients</title>
 
+<script>(function(){
+	var	DOC		=	document,
+		HTML	=	DOC.documentElement,
+		el		=	DOC.createElement("div"),
+		style	=	el.style,
+		size	=	120,
+		result;
+
+	style.width			=
+	style.height		=	size+"px";
+	style.overflow		=	"auto";
+	el.innerHTML		=	Array(size*5).join(" W ");
+
+	HTML.appendChild(el);
+	if(result = el.offsetWidth - el.scrollWidth){
+		result	= result + "px";
+		style	= HTML.style;
+		style.marginRight	= "-" + result;
+		style.paddingRight	= result;
+		HTML.classList.add("opaque-scrollbars");
+	}
+	el.parentNode.removeChild(el);
+}());
+</script>
 <link rel="stylesheet" type="text/css" href="src/css/fonts.css" />
 <link rel="stylesheet" type="text/css" href="src/css/global.css" />
 <link rel="stylesheet" type="text/css" href="src/css/main.css" />
@@ -41,7 +65,81 @@
 
 		<ul id="clients-list">
 			<li>
-				<img src="uploads/clients/Mercedes-Benz-Australia.jpg" alt="Mercedes-Benz Australia - Social Media &amp; Digital Marketing" />
+				<img src="uploads/clients/Melbourne-Storm.png" alt="Melbourne Storm" />
+				<div class="details">
+					<div class="name">Melbourne Storm</div>
+					<ul>
+						<li>Digital Consultancy</li>
+					</ul>
+				</div>
+			</li>
+
+
+			<li>
+				<img src="uploads/clients/Sonoa-Health.png" alt="Sonoa Health" />
+				<div class="details">
+					<div class="name">Sonoa Health</div>
+					<ul>
+						<li>Digital Consultancy</li>
+					</ul>
+				</div>
+			</li>
+			
+			
+			<li>
+				<img src="uploads/clients/Bic.png" alt="Bic" />
+				<div class="details">
+					<div class="name">Bic</div>
+					<ul>
+						<li>Content Creation</li>
+						<li>Content Distribution</li>
+						<li>Data Insights</li>
+						<li>Social Media Management</li>
+						<li>Digital Consultancy</li>
+					</ul>
+				</div>
+			</li>
+
+
+			<li>
+				<img src="uploads/clients/Modscape.png" alt="Modscape" />
+				<div class="details">
+					<div class="name">Modscape</div>
+					<ul>
+						<li>Technical Development</li>
+						<li>Data and Insights</li>
+						<li>Digital Consultancy</li>
+					</ul>
+				</div>
+			</li>
+
+
+			<li>
+				<img src="uploads/clients/Creswick-Wool.png" alt="Creswick Wool" />
+				<div class="details">
+					<div class="name">Creswick Wool</div>
+					<ul>
+						<li>Technical Development</li>
+						<li>EDM Content Creation</li>
+					</ul>
+				</div>
+			</li>
+
+
+			<li>
+				<img src="uploads/clients/KHQ-Approved.png" alt="KHQ Approved" />
+				<div class="details">
+					<div class="name"><abbr title="Kelly Hazell Quill">KHQ</abbr> Approved</div>
+					<ul>
+						<li>Technical Development</li>
+						<li>HubSpot Integration</li>
+					</ul>
+				</div>
+			</li>
+
+
+			<li>
+				<img src="uploads/clients/Mercedes-Benz.png" alt="Mercedes-Benz Australia - Social Media &amp; Digital Marketing" />
 				<div class="details">
 					<div class="name">Mercedes-Benz Australia Pacific Pty Ltd</div>
 					<ul>
@@ -52,8 +150,8 @@
 					</ul>
 				</div>
 			</li>
-			
-			
+
+
 			<li>
 				<img src="uploads/clients/Cadbury-Australia.jpg" alt="Cadbury AU - Social Media Marketing" />
 				<div class="details">
@@ -66,22 +164,7 @@
 				</div>
 			</li>
 			
-			
-			<li>
-				<img src="uploads/clients/Mondelez-International.png" alt="Mondel&#275;z Australia" />
-				<div class="details">
-					<div class="name">Mondel&#275;z Australia</div>
-					<ul>
-						<li>Social Marketing</li>
-						<li>Market Insights, Monitoring and Research</li>
-						<li>Measurement and Analytics</li>
-						<li>Digital Risk and Compliance</li>
-						<li>Creative and Technical Development</li>
-					</ul>
-				</div>
-			</li>
-			
-			
+
 			<li>
 				<img src="uploads/clients/Everyday-Delicious-Kitchen.png" alt="Everyday Delicious Kitchen" />
 				<div class="details">
@@ -108,6 +191,21 @@
 			
 			
 			<li>
+				<img src="uploads/clients/Mondelez-International.png" alt="Mondel&#275;z Australia" />
+				<div class="details">
+					<div class="name">Mondel&#275;z Australia</div>
+					<ul>
+						<li>Social Marketing</li>
+						<li>Market Insights, Monitoring and Research</li>
+						<li>Measurement and Analytics</li>
+						<li>Digital Risk and Compliance</li>
+						<li>Creative and Technical Development</li>
+					</ul>
+				</div>
+			</li>
+
+
+			<li>
 				<img src="uploads/clients/Cherry-Ripe.jpg" alt="Cherry Ripe" />
 				<div class="details">
 					<div class="name">Cherry Ripe</div>
@@ -118,8 +216,8 @@
 					</ul>
 				</div>
 			</li>
-			
-			
+
+
 			<li>
 				<img src="uploads/clients/Chewbies.png" alt="Chewbies" />
 				<div class="details">
@@ -131,8 +229,8 @@
 					</ul>
 				</div>
 			</li>
-			
-			
+
+
 			<li>
 				<img src="uploads/clients/Crown.png" alt="Crown" />
 				<div class="details">
@@ -166,7 +264,7 @@
 	</footer>
 
 
-	<script type="text/javascript" src="src/js/utils.js"></script>
-	<script type="text/javascript" src="src/js/main.js"></script>
+	<script src="src/js/utils.js"></script>
+	<script src="src/js/main.js"></script>
 </body>
 </html>
