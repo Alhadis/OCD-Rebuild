@@ -40,33 +40,6 @@
 		<h2>Clients</h2>
 
 
-		<script>(function(){
-			var	DOC		=	document,
-				BODY	=	DOC.body,
-				WIDTH	=	"width",
-				el		=	DOC.createElement("div"),
-				style	=	el.style,
-				size	=	120,
-				result;
-
-			style.width			=
-			style.height		=	size+"px";
-			style.overflow		=	"auto";
-			el.innerHTML		=	Array(size*5).join(" W ");
-
-			BODY.appendChild(el);
-			if(result = el.offsetWidth - el.scrollWidth){
-				result				= result + "px";
-				style				= BODY.style;
-				style.paddingRight	= result;
-				style[ WIDTH ]		= "-webkit-"	+ (result = "calc(100% + " + result + ")");
-				style[ WIDTH ]		= "-moz-"		+ result;
-				style[ WIDTH ]		= result;
-			}
-			BODY.removeChild(el);
-		}());
-		</script>
-
 		<ul id="clients-list">
 			<li>
 				<img src="uploads/clients/Melbourne-Storm.png" alt="Melbourne Storm" />
@@ -270,5 +243,6 @@
 
 	<script src="src/js/utils.js"></script>
 	<script src="src/js/main.js"></script>
+	<script src="src/js/page.clients.js"></script>
 </body>
 </html>
