@@ -6,30 +6,6 @@
 <meta name="viewport" content="initial-scale=1, minimum-scale=1, user-scalable=no" />
 <title>Online Circle Digital &bull; Clients</title>
 
-<script>(function(){
-	var	DOC		=	document,
-		HTML	=	DOC.documentElement,
-		el		=	DOC.createElement("div"),
-		style	=	el.style,
-		size	=	120,
-		result;
-
-	style.width			=
-	style.height		=	size+"px";
-	style.overflow		=	"auto";
-	el.innerHTML		=	Array(size*5).join(" W ");
-
-	HTML.appendChild(el);
-	if(result = el.offsetWidth - el.scrollWidth){
-		result	= result + "px";
-		style	= HTML.style;
-		style.marginRight	= "-" + result;
-		style.paddingRight	= result;
-		HTML.classList.add("opaque-scrollbars");
-	}
-	el.parentNode.removeChild(el);
-}());
-</script>
 <link rel="stylesheet" type="text/css" href="src/css/fonts.css" />
 <link rel="stylesheet" type="text/css" href="src/css/global.css" />
 <link rel="stylesheet" type="text/css" href="src/css/main.css" />
@@ -62,6 +38,34 @@
 
 	<main role="main">
 		<h2>Clients</h2>
+
+
+		<script>(function(){
+			var	DOC		=	document,
+				BODY	=	DOC.body,
+				WIDTH	=	"width",
+				el		=	DOC.createElement("div"),
+				style	=	el.style,
+				size	=	120,
+				result;
+
+			style.width			=
+			style.height		=	size+"px";
+			style.overflow		=	"auto";
+			el.innerHTML		=	Array(size*5).join(" W ");
+
+			BODY.appendChild(el);
+			if(result = el.offsetWidth - el.scrollWidth){
+				result				= result + "px";
+				style				= BODY.style;
+				style.paddingRight	= result;
+				style[ WIDTH ]		= "-webkit-"	+ (result = "calc(100% + " + result + ")");
+				style[ WIDTH ]		= "-moz-"		+ result;
+				style[ WIDTH ]		= result;
+			}
+			BODY.removeChild(el);
+		}());
+		</script>
 
 		<ul id="clients-list">
 			<li>
