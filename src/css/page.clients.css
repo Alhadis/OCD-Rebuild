@@ -19,6 +19,17 @@ h2{
 	border: 0;
 }
 
+
+/** Allow a smooth fallback to horizontal scrolling for JavaSCript-disabled clients */
+.no-js main{
+	overflow-x: scroll;
+}
+	.no-js h2{
+		position: fixed;
+		width: 100%;
+	}
+
+
 /** Hide the page's running footer for some reason. */
 #bottom{
 	display: none;
