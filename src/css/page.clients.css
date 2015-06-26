@@ -2,6 +2,7 @@ body{
 	padding-bottom: 0;
 	overflow: hidden;
 }
+
 main{
 	max-width: none;
 	position: absolute;
@@ -13,11 +14,55 @@ main{
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
+	h2{
+		text-align: center;
+		display: none;
+		border: 0;
+	}
 
-h2{
-	text-align: center;
-	border: 0;
-}
+	/** Navigation buttons */
+	#grid-nav{
+		padding-top: 5em;
+		position: relative;
+	}
+		#grid-nav > div{
+			background: #000;
+			position: absolute;
+			text-align: center;
+			margin-top: -.5em;
+			font-size: 3em;
+			top:	50%;
+			width:	1em;
+			height:	1em;
+			color:	#fff;
+			cursor: pointer;
+		}
+			/** Touch/hover highlight */
+			#grid-nav > div:hover{
+				color: #009ed5;
+			}
+
+			#grid-nav > .next{
+				right: 0;
+			}
+
+			/** Generated arrowheads */
+			#grid-nav > .prev::before,
+			#grid-nav > .next::before{
+				font-family: OCDIcons;
+				display: block;
+
+				-webkit-transform:	scale(.7, .5);
+				-moz-transform:		scale(.7, .5);
+				-ms-transform:		scale(.7, .5);
+				-o-transform:		scale(.7, .5);
+				transform:			scale(.7, .5);
+			}
+				#grid-nav > .prev::before{ content: "\25C0"; }
+				#grid-nav > .next::before{ content: "\25B6"; }
+
+
+
 
 
 /** Allow a smooth fallback to horizontal scrolling for JavaSCript-disabled clients */
@@ -30,10 +75,12 @@ h2{
 	}
 
 
+
 /** Hide the page's running footer for some reason. */
 #bottom{
 	display: none;
 }
+
 
 
 /** Grid of clients */
@@ -123,6 +170,49 @@ h2{
 	1. TABLETS (600+)
 ===============================================================================*/
 @media (min-width: 37.5em){
+
+h2{
+	display: block;
+}
+
+/** Navigation controls */
+#grid-nav{
+	width: 100%;
+	position: absolute;
+	padding-top: 0;
+	z-index: 10;
+	height:	0;
+	top:	0;
+}
+	/** Elongated, translucent grey buttons */
+	#grid-nav > div{
+		background: #ccc;
+		height: 1.777em;
+		opacity: .5;
+		color: #000;
+
+		top:				5em;
+		top:				50vh;
+		top: -webkit-calc(	50vh - 1.56rem);
+		top: -mozcalc(		50vh - 1.56rem);
+		top: calc(			50vh - 1.56rem);
+	}
+		/** Fade each button in when tapped/hovered-over */
+		#grid-nav > div:hover{
+			color: #000;
+			opacity: .8;
+		}
+
+		#grid-nav > div::before{
+			position: absolute;
+			font-weight: bold;
+			line-height: 0;
+			top:	50%;
+			width:	100%;
+		}
+		#grid-nav > .prev::before{	content: "\3008";	}
+		#grid-nav > .next::before{	content: "\3009";	}
+
 
 
 /** Clipping mask that's wrapped around #clients-list to combat a weird bug on IE */

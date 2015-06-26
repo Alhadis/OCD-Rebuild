@@ -389,7 +389,8 @@ p.big{
 		-ms-user-select:		none;
 		user-select:			none;
 	}
-		.rotator > .n::after{
+		/** Arrow-buttons */
+		.n::after{
 			display: block;
 			position: absolute;
 			top:	50%;
@@ -399,13 +400,11 @@ p.big{
 			font: .4em OCDIcons;
 			text-indent: 0;
 		}
-		.rotator > .prev{	right:	100%;	}
-		.rotator > .next{	left:	100%;	}
-		.rotator > .next::after{	content: "\3009"; }
-		.rotator > .prev::after{
-			content: "\3008";
-			text-align: right;
-		}
+			.n.prev{		right:	  100%;		}
+			.n.next{		left:	  100%;		}
+			.n.next::after{	content: "\3009";	}
+			.n.prev::after{ content: "\3008"; text-align: right; }
+
 
 	.rotator > ul{
 		display: block;
