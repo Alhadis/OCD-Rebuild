@@ -16,7 +16,7 @@ String.prototype.trim	=	String.prototype.trim || function(){return this.replace(
 
 
 /** Store "constants" on the window object to flag specific versions of Explorer. */
-(function(win){
+(function(){
 	var WIN			=	window,
 		DOC			=	document,
 		IE_VERSION	=	"IE_VERSION",
@@ -27,13 +27,13 @@ String.prototype.trim	=	String.prototype.trim || function(){return this.replace(
 		d.innerHTML	=	"<!--[if IE "+v+"]><i></i><![endif]-->";
 		return d.getElementsByTagName("i").length;
 	}(i))
-		win["IS_IE" + i ]	=	true,
-		win[ IE_VERSION ]	=	i;
+		WIN["IS_IE" + i ]	=	true,
+		WIN[ IE_VERSION ]	=	i;
 
 
 	/** Might as well flag the root element with CSS classes while we're here. */
-	DOC.documentElement.classList.add("ie", "ie"+win[ IE_VERSION ]);
-}(window));
+	DOC.documentElement.classList.add("ie", "ie"+WIN[ IE_VERSION ]);
+}());
 
 
 
