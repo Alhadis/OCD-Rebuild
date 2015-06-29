@@ -173,14 +173,21 @@ rotators.forEach(function(o){
 
 
 /** Accordions: adjust heights */
-var accordions	=	document.querySelectorAll(".fold");
+var accordions	=	document.querySelectorAll(".fold"),
+	navMenu		=	document.querySelector("#topnav > .fold");
 if(accordions.length){
 
 	/** Update each accordion's maxHeight to fit their (possibly resized) content. */
 	window.addEventListener("resize", (new function(){
 
 		accordions.forEach(function(o){
-			o.style.maxHeight	=	o.scrollHeight + "px";
+			var height	=	o.scrollHeight;
+
+			/** For the nav menu, ensure it doesn't extend further than the viewport's height: it'll make some items unreachable! */
+			if(navMenu === o)
+				height	=	Math.min(height, window.innerHeight - o.offsetTop);
+
+			o.style.maxHeight	=	height + "px";
 		});
 
 		return this.constructor;
