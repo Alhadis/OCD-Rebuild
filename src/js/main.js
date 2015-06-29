@@ -1,3 +1,4 @@
+
 /** DOM Extensions */
 NodeList.prototype.forEach				=
 HTMLCollection.prototype.forEach		=	Array.prototype.forEach;
@@ -193,3 +194,11 @@ if(accordions.length){
 		return this.constructor;
 	}).debounce(100));
 }
+
+/** Automatically close the mobile nav-menu when a link's been tapped. */
+var navMenuControl	=	document.getElementById("topnav_0");
+navMenu.querySelectorAll("a").forEach(function(o){
+	o.addEventListener("click", function(){
+		navMenuControl.checked	=	true;
+	}, false);
+});
