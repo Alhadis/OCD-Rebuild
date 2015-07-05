@@ -1,395 +1,195 @@
-body{
-	padding-bottom: 0;
-	overflow: hidden;
-}
-
 main{
-	max-width: none;
 	position: absolute;
 	top:	3.125em;
 	left:	0;
-	right:	0;
 	bottom:	0;
-	padding: 0;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	right:	0;
 }
-	h2{
-		text-align: center;
-		display: none;
-		border: 0;
-	}
 
-	/** Navigation buttons */
-	#grid-nav{
-		padding-top: 5em;
-		position: relative;
-	}
-		#grid-nav > div{
-			background: #000;
-			position: absolute;
-			text-align: center;
-			margin-top: -.5em;
-			font-size: 3em;
-			top:	50%;
-			width:	1em;
-			height:	1em;
-			color:	#fff;
-			cursor: pointer;
-		}
-			/** Touch/hover highlight */
-			#grid-nav > div:hover{
-				color: #009ed5;
-			}
-
-			#grid-nav > .next{
-				right: 0;
-			}
-
-			/** Generated arrowheads */
-			#grid-nav > .prev::before,
-			#grid-nav > .next::before{
-				font-family: OCDIcons;
-				display: block;
-
-				-webkit-transform:	scale(.7, .5);
-				-moz-transform:		scale(.7, .5);
-				-ms-transform:		scale(.7, .5);
-				-o-transform:		scale(.7, .5);
-				transform:			scale(.7, .5);
-			}
-				#grid-nav > .prev::before{ content: "\25C0"; }
-				#grid-nav > .next::before{ content: "\25B6"; }
-
-
-
-
-
-/** Allow a smooth fallback to horizontal scrolling for JavaSCript-disabled clients */
-.no-js main{
-	overflow-x: scroll;
-}
-	.no-js h2{
-		position: fixed;
-		width: 100%;
-	}
-
-
-
-/** Hide the page's running footer for some reason. */
-#bottom{
+/** Hide the page heading on mobile, as well as the footer for some reason. */
+h2, #bottom{
 	display: none;
 }
 
 
 
-/** Grid of clients */
-#clients-list{
-	color: #c1c1c1;
-	border-top: 1px solid;
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	font-family: Helvetica, Arial, sans-serif;
-}
-	/** Clearfix */
-	#clients-list::after{
-		content: "";
-		display: block;
-		clear: both;
-	}
-
-	/** Grid cell */
-	#clients-list > li{
-		border: 0 solid;
-		border-width: 0 0 1px 1px;
-		width: 33.3333%;
-		float: left;
-		position: relative;
-	}
-		#clients-list > li:last-child::after{
-			content: "";
-			position: absolute;
-			left:	100%;
-			top:	0;
-			bottom:	-1px;
-			border-left: 1px solid;
-		}
-
-		/** Aspect ratio control */
-		#clients-list > li::before{
-			content: "";
-			display: block;
-			padding-top: 100%;
-		}
-
-		/** Logo */
-		#clients-list > li > img{
-			position: absolute;
-			top:	50%;
-			left:	50%;
-			max-width: 95%;
-			-webkit-transform:	translate(-50%, -50%);
-			-moz-transform:		translate(-50%, -50%);
-			-ms-transform:		translate(-50%, -50%);
-			-o-transform:		translate(-50%, -50%);
-			transform:			translate(-50%, -50%);
-		}
-
-		/** Involvement details */
-		#clients-list > li > .details{
-			position: absolute;
-			left:	0;
-			top:	0;
-			bottom:	0;
-			right:	0;
-			z-index: 2;
-			background: #009ed5;
-			color: #fff;
-			padding: 1em;
-			display: none;
-		}
-			/** Client's name */
-			#clients-list .details > .name{
-				font-weight: bold;
-				font-style: italic;
-				font-size: 1.25em;
-				margin-bottom: 1.25em;
-			}
-
-			/** List of roles and responsibilities */
-			#clients-list .details > ul{
-				list-style: disc;
-				-webkit-font-smoothing: subpixel-antialiased;
-				-moz-osx-font-smoothing: auto;
-			}
-
-
-
-/*=============================================================================*
-	1. TABLETS (600+)
-===============================================================================*/
-@media (min-width: 37.5em){
-
-h2{
-	display: block;
-}
-
-/** Navigation controls */
+/** Reel navigation */
 #grid-nav{
-	width: 100%;
-	position: absolute;
-	padding-top: 0;
-	z-index: 10;
-	height:	0;
-	top:	0;
 }
-	/** Elongated, translucent grey buttons */
+	/** Navigation buttons */
 	#grid-nav > div{
-		background: #ccc;
-		height: 1.777em;
-		opacity: .5;
-		color: #000;
-
-		top:				5em;
-		top:				50vh;
-		top: -webkit-calc(	50vh - 1.56rem);
-		top: -mozcalc(		50vh - 1.56rem);
-		top: calc(			50vh - 1.56rem);
+		position: absolute;
+		background: #000;
+		font:	1.5em/2 OCDIcons;
+		top:	.5em;
+		width:	2em;
+		height:	2em;
+		color:	#fff;
+		cursor: pointer;
+		text-align: center;
 	}
-		/** Fade each button in when tapped/hovered-over */
-		#grid-nav > div:hover{
-			color: #000;
-			opacity: .8;
-		}
+		/** Hover state, briefly displayed when button's tapped on mobile (hence no transitions). */
+		#grid-nav > div:hover{		background-color: #686868;	}
 
-		#grid-nav > div::before{
-			position: absolute;
-			font-weight: bold;
-			line-height: 0;
-			top:	50%;
-			width:	100%;
-		}
-		#grid-nav > .prev::before{	content: "\3008";	}
-		#grid-nav > .next::before{	content: "\3009";	}
+		/** Generated arrowheads */
+		#grid-nav > .prev::before{	content: "\25C1";	}
+		#grid-nav > .next::before{	content: "\25B7";	}
+		#grid-nav > .next{			right:	0;			}
 
 
 
-/** Clipping mask that's wrapped around #clients-list to combat a weird bug on IE */
-.clipping-mask{
+#clients-frame{
 	position: absolute;
-	top:	0;
-	left:	0;
-	width:	100%;
-	height:	100%;
-	overflow: hidden;
-}
-
-
-/**
- * CLIENTS GRID
- *
- * Because we're stacking logos vertically in columns, some magic needs to be performed in order
- * to achieve the correct running order. A more orthodox solution would've been to use JavaScript
- * to lay out the columns in the correct order, but since I enjoy markup-minimalism (and love a
- * good challenge), I opted to accomplish the effect without the aid of JavaScript.
- *
- * What's happening here is we're letting the logos flow down the page vertically, tilting the
- * container upwards 90deg so the columns become rows, and flipping each cell into the right
- * position, giving the impression the contents are flowing horizontally instead. It's weird,
- * but it works (at least if you're not unfortunate enough to still be using IE8, FFS).
- */
-#clients-list{
-	width:					50%;
-	width: -webkit-calc(	50% + 1px);
-	width: -moz-calc(		50% + 1px);
-	width: calc(			50% + 1px);
-
-	max-width: 37.5em;
-	position: absolute;
-	cursor: default;
+	outline: 1px solid;
+	color:	#c1c1c1;
+	top:	4.75em;
 	left:	0;
 	right:	0;
-	top:	4.5em;
+	bottom:	0;
 
-	/** 2D transforms (supported in IE9) */
-	-webkit-transform:	rotate(-90deg) scaleX(-1);
-	-moz-transform:		rotate(-90deg) scaleX(-1);
-	-ms-transform:		rotate(-90deg) scaleX(-1);
-	-o-transform:		rotate(-90deg) scaleX(-1);
-	transform:			rotate(-90deg) scaleX(-1);
-
-	/** 3D transforms (smoother performance, but not as widely-supported in older browsers) */
-	-webkit-transform:	rotateZ(-90deg) scaleX(-1);
-	-moz-transform:		rotateZ(-90deg) scaleX(-1);
-	-o-transform:		rotateZ(-90deg) scaleX(-1);
-	transform:			rotateZ(-90deg) scaleX(-1);
-
-	-webkit-transform-origin:	0 0;
-	-moz-transform-origin:		0 0;
-	-ms-transform-origin:		0 0;
-	-o-transform-origin:		0 0;
-	transform-origin:			0 0;
+	-webkit-transform:	rotate(-90deg) translateX(-100%);
+	-moz-transform:		rotate(-90deg) translateX(-100%);
+	-ms-transform:		rotate(-90deg) translateX(-100%);
+	-o-transform:		rotate(-90deg) translateX(-100%);
+	transform:			rotate(-90deg) translateX(-100%);
 }
-	/**
-	 * Generate faux-borders that overlay the cells underneath, since the cells
-	 * themselves might be vertically offset 1px due to percentile roundoff errors.
-	 */
-	#clients-list::before,
-	#clients-list::after{
-		position: absolute;
-		content: "";
-		height: 100%;
-		border: 0 solid;
-	}
-		/** Outer-most border enclosing grid */
-		#clients-list::before{
-			left:	0;
-			right:	0;
-			top:	0;
-			bottom:	0;
-			margin:	-1px;
-			border-width: 1px;
-		}
-
-		/** Inner border running between each row */
-		#clients-list::after{
-			left:	50%;
-			z-index: 20;
-			border-right: 1px solid;
-		}
-
-
-
-	/** Be doubly-sure hardware acceleration is applied */
+	#clients-frame,
 	#clients-list,
 	#clients-list > li{
+		-webkit-transform-style:		preserve-3d;
+		-moz-transform-style:			preserve-3d;
+		transform-style:				preserve-3d;
+
 		-webkit-backface-visibility:	hidden;
 		-moz-backface-visibility:		hidden;
 		backface-visibility:			hidden;
+		
+		-webkit-transform-origin:	0 0;
+		-moz-transform-origin:		0 0;
+		-ms-transform-origin:		0 0;
+		-o-transform-origin:		0 0;
+		transform-origin:			0 0;
 	}
 
-	/** Flip each cell back into the correct position */
-	#clients-list > li{
-		width: 50%;
-		border: 0;
+	/** Actual list of clients */
+	#clients-list{
+		list-style: none;
+		padding: 0;
 		margin: 0;
 
-		/** 2d transforms */
-		-webkit-transform:	rotate(90deg) scaleY(-1);
-		-moz-transform:		rotate(90deg) scaleY(-1);
-		-ms-transform:		rotate(90deg) scaleY(-1);
-		-o-transform:		rotate(90deg) scaleY(-1);
-		transform:			rotate(90deg) scaleY(-1);
-		
-		/** 3D transforms */
-		-webkit-transform:	rotateZ(90deg) scaleY(-1);
-		-moz-transform:		rotateZ(90deg) scaleY(-1);
-		-ms-transform:		rotateZ(90deg) scaleY(-1);
-		-o-transform:		rotateZ(90deg) scaleY(-1);
-		transform:			rotateZ(90deg) scaleY(-1);
+		-webkit-transform:	scaleX(-1) translateX(-100%);
+		-moz-transform:		scaleX(-1) translateX(-100%);
+		-ms-transform:		scaleX(-1) translateX(-100%);
+		-o-transform:		scaleX(-1) translateX(-100%);
+		transform:			scaleX(-1) translateX(-100%);
 	}
-		#clients-list > li:nth-child(odd){
-			z-index: 2;
-		}
-			/** Generate a full-height vertical divider for each two cells */
-			#clients-list > li:nth-child(odd)::after{
-				content: "";
-				position: absolute;
-				bottom:	-100%;
-				top:	0;
-				right:	0;
-				z-index: 4;
-				border-right: 1px solid;
-			}
-
-
-
-		/** Fade the blue text-block into sight when rolled over */
-		#clients-list > li > .details{
+		/** Clearfix */
+		#clients-list::after{
+			content: "";
 			display: block;
-			opacity: 0;
-
-			-webkit-transition:	.3s ease opacity;
-			-moz-transition:	.3s ease opacity;
-			-o-transition:		.3s ease opacity;
-			transition:			.3s ease opacity;
+			clear: both;
 		}
-			/** Force hardware acceleration */
-			#clients-list > li > .details,
-			#clients-list > li > .details > .name,
-			#clients-list > li > .details > ul{
-				-webkit-backface-visibility:	hidden;
-				-moz-backface-visibility:		hidden;
-				backface-visibility:			hidden;
 
-				/** Prevent text flickering in some browsers (e.g., Firefox) */
-				-webkit-transform-style:		preserve-3d;
-				-moz-transform-style:			preserve-3d;
-				transform-style:				preserve-3d;
+		#clients-list > li{
+			-webkit-transform:	rotate(-90deg) scaleX(-1);
+			-moz-transform:		rotate(-90deg) scaleX(-1);
+			-ms-transform:		rotate(-90deg) scaleX(-1);
+			-o-transform:		rotate(-90deg) scaleX(-1);
+			transform:			rotate(-90deg) scaleX(-1);
+
+			width: 33.3333%;
+			background: #fff;
+			float: left;
+			outline: 1px solid;
+			margin: 0;
+			position: relative;
+		}
+			/** Aspect ratio control */
+			#clients-list > li::before{
+				content: "";
+				display: block;
+				padding-top: 100%;
 			}
 
-			#clients-list > li:nth-child(even) > .details{
-				right: 1px;
+			/** Logo */
+			#clients-list > li > img{
+				position: absolute;
+				width:	100%;
+				top:	0;
 			}
 
-			#clients-list > li:hover > .details{
-				opacity: 1;
+			/** Hide involvement details on mobile */
+			#clients-list > li > .details{
+				display: none;
 			}
-
-			#clients-list ul{
-				font-size: .9em;
-				line-height: 1.5;
-			}
-}
 
 
 
 /*=============================================================================*
-	2. DESKTOP (1024+)
+	2. TABLETS (600+)
 ===============================================================================*/
-@media (min-width: 64em){
-	#clients-list{
-		top: 7em;
+@media (min-width: 37.5em){
+
+main{
+	max-width: none;
+}
+
+
+/** Bring the heading back into view */
+h2{
+	display: block;
+	text-align: center;
+	border: 0;
+}
+
+
+/** Use translucent grey shading for the navigation buttons */
+#grid-nav > div,
+#grid-nav > div:hover{
+	background-color: #ccc;
+	position: fixed;
+	top:	50%;
+	z-index: 9;
+	opacity: .5;
+	color: #000;
+	height: 3.35em;
+	line-height: 0;
+
+	-webkit-transition:	.15s ease opacity;
+	-moz-transition:	.15s ease opacity;
+	-o-transition:		.15s ease opacity;
+	transition:			.15s ease opacity;
+}
+	#grid-nav > div:hover{
+		opacity: .8;
 	}
+
+	#grid-nav > div::before{
+		position: absolute;
+		top:	50%;
+		width:	100%;
+		left:	0;
+	}
+
+
+/** Switch to two rows for the clients reel */
+#clients-frame{
+	position: static;
+	outline: none;
+}
+	#clients-list{
+		width: 50%;
+		max-width: 37.5em;
+		margin-left: auto;
+	}
+		#clients-list > li{
+			width: 50%;
+		}
+}
+
+
+/** Debug class toggled via console */
+#clients-frame.no-trans,
+#clients-frame.no-trans *{
+	transform: none !important;
 }
