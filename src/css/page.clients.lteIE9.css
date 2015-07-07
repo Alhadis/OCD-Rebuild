@@ -1,0 +1,33 @@
+#grid-nav{
+	display: none;
+}
+
+
+/** Release our grip on the box model */
+main,
+#clients-frame,
+#clients-list{
+	position: static;
+	outline: 0;
+	border: 0;
+	overflow: visible;
+	width: auto;
+	height: auto;
+}
+	#clients-list:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+
+	#clients-list > li{
+		display: block;
+		float: left;
+		position: relative;
+		width: 12.5%;
+	}
+
+@media (max-width: 56em){		#clients-list > li{	width: 16.666%;	}} /** 6 columns */
+@media (max-width: 50em){		#clients-list > li{	width: 20%;		}} /** 5 columns */
+@media (max-width: 37.5em){		#clients-list > li{ width: 25%;		}} /** 4 columns */
+@media (max-width: 25em){		#clients-list > li{ width: 33.333%;	}} /** 3 columns */

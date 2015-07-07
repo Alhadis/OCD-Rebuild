@@ -2,30 +2,31 @@
 	"use strict";
 
 	/*<*/
-	var	DOC			=	document,
-		WIN			=	window,
-		QUERY		=	"querySelector",
+	var	DOC				=	document,
+		WIN				=	window,
+		FALSE			=	false,
+
+		QUERY			=	"querySelector",
+		QUERY_ALL		=	QUERY + "All",
+		ADD_LISTENER	=	"addEventListener",
 		/*>*/
 
-		main		=	DOC[ QUERY ]("main"),
-		clients		=	DOC[ QUERY ]("#clients-list"),
-		clip,
 
-		/** Read the dimensions of the first cell in the clients grid. */
-		top			=	clients.offsetTop,
-		cell		=	clients.children[0],
-		cellSize	=	cell.offsetWidth;
+		clientsList	=	DOC[ QUERY ]("#clients-list"),
+		gridNav		=	DOC[ QUERY ]("#grid-nav"),
+		gridBack	=	gridNav[ QUERY ](".prev"),
+		gridNext	=	gridNav[ QUERY ](".next");
 
+		gridBack[ ADD_LISTENER ]("click", function(e){
+			clientsList.scrollLeft	-=	WIN.innerWidth / 3;
+			e.preventDefault();
+			return FALSE;
+		});
 
-		/** If the scrollHeight of the main element appears to be taller than three rows in height on desktop, something went wrong. */
-		if(WIN.innerWidth > 599 && main.scrollHeight > cellSize * 3 + top){
+		gridNext[ ADD_LISTENER ]("click", function(e){
+			clientsList.scrollLeft	+=	WIN.innerWidth / 3;
 
-			clip = clients.parentNode.insertBefore(New("div", {className: "clipping-mask"}), clients);
-			clip.appendChild(clients);
-
-			WIN.addEventListener("resize", (new function(e){
-				clip.style.height	=	(cell.offsetWidth * 2 + top + 2)+"px"
-				return this.constructor;
-			}).debounce(150));
-		}
+			e.preventDefault();
+			return FALSE;
+		});
 }());
