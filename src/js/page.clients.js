@@ -46,7 +46,8 @@
 			var	list		=	args.list,
 				latency		=	args.latency	|| 600,
 				easing		=	args.easing		|| Tween.EASE_IN_OUT,
-				wrapNav		=	UNDEF === args.wrap ? TRUE : args.wrap,
+				wrapNav		=	UNDEF !== args.wrap		? args.wrap   : TRUE,
+				keyNav		=	UNDEF !== args.keyNav	? args.keyNav : TRUE,
 
 
 				/** Assorted pointers */
@@ -179,6 +180,14 @@
 				}(500));
 
 			}.debounce(50));
+			
+			
+			/** If keyboard navigation's enabled, add a listener to move the slider in response to keystrokes */
+			!keyNav || WIN[ ADD_LISTENER ]("keyup", function(e){
+				var	key	=	e.keyCode;
+					 if(37 === key) back(wrapNav);
+				else if(39 === key) next(wrapNav);
+			});
 
 
 			/** Expose some methods for external use */
