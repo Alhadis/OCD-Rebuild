@@ -1,13 +1,14 @@
 html, body{
 	min-height: 100%;
 	overflow-x: hidden;
+	overflow-y: auto;
 	width: 100%;
 	position: absolute;
 }
 
 body{
 	padding: 3.125em 0 5.125em;
-	overflow-y: scroll;
+	overflow-y: visible;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -579,6 +580,11 @@ p.big{
 	3. DESKTOP (1024+)
 ===============================================================================*/
 @media (min-width: 64em){
+body{
+	padding-bottom: 7em;
+}
+
+
 #top{
 	text-align: left;
 }

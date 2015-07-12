@@ -83,9 +83,10 @@ a:hover{
 /** Vertically-centred content */
 body{
 	padding-bottom: 7em;
-	height: 100%;
+	min-height: 100%;
 	text-align: center;
 	white-space: nowrap;
+	overflow-y: visible;
 }
 	main,
 	body::after{
@@ -98,7 +99,10 @@ body{
 	/** Centring-aide */
 	body::after{
 		content: "";
-		min-height: 100%;
+		min-height: 25em;
+		min-height: -webkit-calc(	100vh - 10.125em);
+		min-height: -moz-calc(		100vh - 10.125em);
+		min-height: calc(			100vh - 10.125em);
 	}
 
 
