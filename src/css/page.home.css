@@ -36,6 +36,11 @@ body.circle{
 				display: block;
 				text-align: right;
 			}
+
+		#oc-hello + p ~ p{
+			font-size: .8em;
+			margin: 0 1em;
+		}
 	
 	
 	/** Golden call-to-action button centred beneath circled content. */
