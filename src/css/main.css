@@ -1,13 +1,14 @@
 html, body{
 	min-height: 100%;
 	overflow-x: hidden;
+	overflow-y: auto;
 	width: 100%;
 	position: absolute;
 }
 
 body{
 	padding: 3.125em 0 5.125em;
-	overflow-y: scroll;
+	overflow-y: visible;
 	-webkit-overflow-scrolling: touch;
 }
 
@@ -107,6 +108,27 @@ main{
 		}
 
 
+	/** Job vacancy pages */
+	#careers{
+		padding: 0 1em;
+	}
+		#careers > #wp-content{
+			padding: 0 0 1em;
+		}
+		.oc-tagline{
+			font-size: 1.5em;
+			font-weight: 600;
+			margin-bottom: .5em;
+		}
+		
+		#careers h5{
+			margin: 2em 0 .5em;
+		}
+		#careers h5 + p{
+			margin-top: .5em;
+		}
+
+
 
 /** Centred circle */
 body.circle{
@@ -177,10 +199,6 @@ body.circle{
 				font-size: 1em;
 				margin: .5em auto .25em;
 			}
-				body.circle p.big ~ p{
-					font-size: .8em;
-					margin: 0 1em;
-				}
 			
 			body.circle > main > #wp-content ul,
 			body.circle > main > #wp-content ol{
@@ -579,6 +597,11 @@ p.big{
 	3. DESKTOP (1024+)
 ===============================================================================*/
 @media (min-width: 64em){
+body{
+	padding-bottom: 7em;
+}
+
+
 #top{
 	text-align: left;
 }

@@ -1,6 +1,7 @@
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none!important}a{background-color:transparent}a:active,a:hover{outline:0}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 *{
+	tab-size: 4;
 	-webkit-box-sizing:	border;
 	-webkit-box-sizing:	border-box;
 	-moz-box-sizing:	border;
@@ -21,7 +22,12 @@ html{
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
+
+	-webkit-font-feature-settings:	"liga" 1, "calt" 1, "swsh" 1;
+	-moz-font-feature-settings:		"liga=1, calt=1, swsh=1";
+	-moz-font-feature-settings:		"liga" 1, "calt" 1, "swsh" 1;
+	-o-font-feature-settings:		"liga" 1, "calt" 1, "swsh" 1;
+	font-feature-settings:			"liga" 1, "calt" 1, "swsh" 1;
 }
 
 a{
@@ -82,6 +88,10 @@ h3{
 
 h4{
 	font-size: 1.25em;
+}
+
+h5{
+	font: 600 1em "Open Sans";
 }
 
 p{
@@ -372,7 +382,7 @@ p.big{
 		text-align: left;
 		text-indent: -999em;
 		cursor: pointer;
-		z-index: 10;
+		z-index: 8;
 		bottom:	0;
 		top:	0;
 		width:	1em;
@@ -383,7 +393,8 @@ p.big{
 		-ms-user-select:		none;
 		user-select:			none;
 	}
-		.rotator > .n::after{
+		/** Arrow-buttons */
+		.n::after{
 			display: block;
 			position: absolute;
 			top:	50%;
@@ -393,13 +404,11 @@ p.big{
 			font: .4em OCDIcons;
 			text-indent: 0;
 		}
-		.rotator > .prev{	right:	100%;	}
-		.rotator > .next{	left:	100%;	}
-		.rotator > .next::after{	content: "\3009"; }
-		.rotator > .prev::after{
-			content: "\3008";
-			text-align: right;
-		}
+			.n.prev{		right:	  100%;		}
+			.n.next{		left:	  100%;		}
+			.n.next::after{	content: "\3009";	}
+			.n.prev::after{ content: "\3008"; text-align: right; }
+
 
 	.rotator > ul{
 		display: block;
