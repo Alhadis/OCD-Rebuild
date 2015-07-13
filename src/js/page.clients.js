@@ -1,12 +1,6 @@
 (function(){
 	"use strict";
 
-	/*< Extensions */
-		/** Stops a function from firing too quickly. */
-		Function.prototype.debounce=function(t,e){var i=this,t=t<0?0:t,n,o,u,a,f=function(){var r=Date.now()-n;if(r>=t){if(!e)i.apply(o,u);if(a)clearTimeout(a);a=o=u=null}else a=setTimeout(f,t-r)};return function(){o=this,u=arguments;if(!t)return i.apply(o,u);n=Date.now();if(!a){if(e)i.apply(o,u);a=setTimeout(f,t)}}};
-	/*>*/
-
-
 	/*<*/
 	var	DOC					=	document,
 		WIN					=	window,
@@ -26,6 +20,7 @@
 		OFFSET				=	"offset",
 		_LEFT				=	"Left",
 		_WIDTH				=	"Width",
+		RESIZE				=	"resize",
 		SCROLL_LEFT			=	SCROLL	+ _LEFT,
 		SCROLL_WIDTH		=	SCROLL	+ _WIDTH,
 		OFFSET_LEFT			=	OFFSET	+ _LEFT,
@@ -159,7 +154,7 @@
 
 
 			/** Set an event listener to realign the grid if the viewport's changed dimensions. */
-			WIN[ ADD_LISTENER ]("resize", function(){
+			WIN[ ADD_LISTENER ](RESIZE, function(){
 
 				setTimeout(function(){
 					
