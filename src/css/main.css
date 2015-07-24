@@ -46,10 +46,7 @@ body{
 			height: 100%;
 			background: url("../img/ocd-logo.png") #009ed5 no-repeat 50% 50%;
 		}
-			/** Vertically-stacked logo that's displayed on desktop */
-			#logo > a::before{
-				background-image: url("../img/ocd-logo-tall.png");
-			}
+
 
 
 	/** Dropdown menu */
@@ -617,15 +614,22 @@ body{
 			width: 100%;
 			background-image: none;
 		}
+			/** Vertically-stacked logo */
 			#logo > a::before{
-				content: "";
 				position: absolute;
-				background-position: 50% 50%;
-				background-repeat: no-repeat;
+				content: "";
 				top:	0;
 				left:	0;
 				right:	0;
 				bottom:	0;
+
+				background: no-repeat 50% 50% url("../img/ocd-logo-tall.svg");
+				-webkit-background-size:	87% auto;
+				-khtml-background-size:		87% auto;
+				-moz-background-size:		87% auto;
+				-ms-background-size:		87% auto;
+				-o-background-size:			87% auto;
+				background-size:			87% auto;
 			}
 
 
@@ -748,10 +752,23 @@ body.circle{
 
 
 /*=============================================================================*
-	3a. LANDSCAPE: Ensure "circled" content won't overlap footer elements
+	3.5 LARGE DESKTOP (1760+)
+===============================================================================*/
+@media (min-width: 110em){
+body{
+	font-size: 1vw;
+}
+}
+
+
+
+/*=============================================================================*
+	LANDSCAPE: Ensure "circled" content won't overlap footer elements
 ===============================================================================*/
 @media (orientation: landscape){						body.circle{	min-height: 31em;	}}
 @media (orientation: landscape) and (min-width: 64em){	body.circle{	min-height: 42em;	}}
+
+
 
 
 
@@ -772,13 +789,4 @@ body.circle{
 		-o-background-size:			123px 35px;
 		background-size:			123px 35px;
 	}
-		#logo > a::before{
-			background-image: url("../img/ocd-logo-tall@2x.png");
-			-webkit-background-size:	77px 73px;
-			-khtml-background-size:		77px 73px;
-			-moz-background-size:		77px 73px;
-			-ms-background-size:		77px 73px;
-			-o-background-size:			77px 73px;
-			background-size:			77px 73px;
-		}
 }

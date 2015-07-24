@@ -182,9 +182,18 @@ body.circle{
 }
 
 
+/*=============================================================================*
+	3.5 LARGE DESKTOP (1760+)
+===============================================================================*/
+@media (min-width: 110em){
+	#oc-hello + p ~ p{
+		font-size: 1vw;
+	}
+}
+
 
 /*=============================================================================*
-	3a. LANDSCAPE: Ensure "circled" content won't overlap footer elements
+	LANDSCAPE: Ensure "circled" content won't overlap footer elements
 ===============================================================================*/
 @media (min-width: 37.5em){									body.circle{	min-height: 45em;	}}
 @media (orientation: landscape) and (min-width: 64em){		body.circle{	min-height: 42em;	}}

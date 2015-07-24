@@ -108,3 +108,23 @@ body{
 		padding-left: 1em;
 	}
 }
+
+
+
+/*=============================================================================*
+	3.5 LARGE DESKTOP (1760+)
+===============================================================================*/
+@media (min-width: 110em){
+body{
+	-webkit-background-size:	8.2vw auto;
+	-khtml-background-size:		8.2vw auto;
+	-moz-background-size:		8.2vw auto;
+	-ms-background-size:		8.2vw auto;
+	-o-background-size:			8.2vw auto;
+	background-size:			8.2vw auto;
+}
+
+#current-vacancies{
+	font-size: 1.25vw;
+}
+}
