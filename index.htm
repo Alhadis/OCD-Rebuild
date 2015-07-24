@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="src/css/global.css" />
 <link rel="stylesheet" type="text/css" href="src/css/main.css" />
 <link rel="stylesheet" type="text/css" href="src/css/page.home.css" />
+<link rel="stylesheet" type="text/css" href="src/css/feat.subscribe.css" />
 </head>
 
 
@@ -92,5 +93,35 @@
 
 
 	<script src="src/js/main.js"></script>
+
+
+	<!-- Lightbox-style dialogue -->
+	<div id="hs-lightbox" class="lightbox" role="alert">
+		<form id="hs-subscribe">
+			<div class="close"></div>
+			<div class="big">Oh, hey!</div>
+			<p>Join 2,000+ other <span>Australian marketers</span></p>
+			<p>Get monthly newsletters and reports delivered straight to your inbox</p>
+
+			<fieldset>
+				<label id="f-first-name">
+					<span class="text">First name *</span>
+					<input type="text" id="first-name" name="first-name" />
+					<span class="error">Please complete this mandatory field.</span>
+				</label><!--
+
+				--><label id="f-email">
+					<span class="text">Email *</span>
+					<input type="email" id="email-addr" name="email-addr" />
+					<span class="error">Please complete this mandatory field.</span>
+				</label>
+			</fieldset>
+
+			<input type="submit" class="gold" value="Subscribe" />
+		</form>
+	</div>
+	<script src="src/js/nag.js"></script>
+	<script>new Nag("#hs-lightbox", "hs-user-subscribed", true);</script>
+
 </body>
 </html>

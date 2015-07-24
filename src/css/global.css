@@ -162,8 +162,25 @@ input[type="tel"],
 input[type="url"],
 input[type="email"],
 textarea{
+	background: #c5c4c4;
+	border: 0;
+	padding: .5em;
 
+	-webkit-transition:	.3s ease all;
+	-moz-transition:	.3s ease all;
+	-o-transition:		.3s ease all;
+	transition:			.3s ease all;
 }
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="search"]:focus,
+	input[type="tel"]:focus,
+	input[type="url"]:focus,
+	input[type="email"]:focus,
+	textarea:focus{
+		background-color: #ddd;
+	}
+
 
 /** Blue buttons */
 input[type="submit"],
@@ -443,6 +460,130 @@ p.big{
 
 		.rotator > ul > .active{
 			opacity: 1;
+		}
+
+
+/** Sliding callouts */
+.callout{
+	position: fixed;
+	bottom:	0;
+	right:	0;
+	z-index: 8;
+
+	/** Ensure hardware acceleration is enforced */
+	-webkit-transform-style:		preserve-3d;
+	-moz-transform-style:			preserve-3d;
+	transform-style:				preserve-3d;
+	-webkit-backface-visibility:	hidden;
+	-moz-backface-visibility:		hidden;
+	backface-visibility:			hidden;
+
+
+	/** 2D transforms */
+	-webkit-transform:	translateX(100%);
+	-moz-transform:		translateX(100%);
+	-ms-transform:		translateX(100%);
+	-o-transform:		translateX(100%);
+	transform:			translateX(100%);
+
+	/** 3D transforms for better performance in browsers that support them */
+	-webkit-transform:	translate3d(100%, 0, 0);
+	-moz-transform:		translate3d(100%, 0, 0);
+	-o-transform:		translate3d(100%, 0, 0);
+	transform:			translate3d(100%, 0, 0);
+}
+	.show.callout{
+		-webkit-transform:	translateX(0%);
+		-moz-transform:		translateX(0%);
+		-ms-transform:		translateX(0%);
+		-o-transform:		translateX(0%);
+		transform:			translateX(0%);
+
+		-webkit-transform:	translate3d(0, 0, 0);
+		-moz-transform:		translate3d(0, 0, 0);
+		-o-transform:		translate3d(0, 0, 0);
+		transform:			translate3d(0, 0, 0);
+	}
+
+
+/** Lightbox-style modal dialogues */
+.lightbox{
+	position: fixed;
+	overflow: hidden;
+	opacity: 0;
+	width:	100%;
+	height:	100%;
+	left:	-9999%;
+	top:	-9999%;
+	background-color: rgba(255,255,255,.5);
+	z-index: 9;
+	white-space: nowrap;
+
+	-webkit-transition:	.3s ease opacity 0s, 0s step-end top .3s, 0s step-end left .3s;
+	-moz-transition:	.3s ease opacity 0s, 0s step-end top .3s, 0s step-end left .3s;
+	-ms-transition:		.3s ease opacity 0s, 0s step-end top .3s, 0s step-end left .3s;
+	-o-transition:		.3s ease opacity 0s, 0s step-end top .3s, 0s step-end left .3s;
+	transition:			.3s ease opacity 0s, 0s step-end top .3s, 0s step-end left .3s;
+}
+	.show.lightbox{
+		top:	0;
+		left:	0;
+		opacity: 1;
+
+		-webkit-transition-delay:	0s, 0s, 0s;
+		-moz-transition-delay:		0s, 0s, 0s;
+		-ms-transition-delay:		0s, 0s, 0s;
+		-o-transition-delay:		0s, 0s, 0s;
+		transition-delay:			0s, 0s, 0s;
+	}
+
+	/** Wrapper element for the lightbox's content */
+	.lightbox > :first-child{
+		display: inline-block;
+		vertical-align: middle;
+		white-space: normal;
+		background: #fff;
+		color: #000;
+		color: initial;
+	}
+
+	/** Centring aide */
+	.lightbox::after{
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+
+
+
+/** Shared transition rules for callouts/lightboxes */
+.callout,
+.callout > .close,
+.lightbox .close{
+	-webkit-transition:	.3s ease all;
+	-moz-transition:	.3s ease all;
+	-o-transition:		.3s ease all;
+	transition:			.3s ease all;
+}
+	/** Close button */
+	.callout > .close,
+	.lightbox .close{
+		position: absolute;
+		cursor: pointer;
+		top:	0;
+		right:	0;
+		margin: 0 .25em 0 0;
+		font: 600 2.375em/1 "Open Sans";
+	}
+		.callout > .close:hover,
+		.lightbox .close:hover{
+			color: #009ed5;
+		}
+		/** Generated × symbol */
+		.callout > .close::before,
+		.lightbox .close::before{
+			content: "\D7";
 		}
 
 

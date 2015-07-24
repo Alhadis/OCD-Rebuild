@@ -1,0 +1,232 @@
+/** HubSpot newsletter slider */
+#hs-slider{
+	background: #000;
+	color: #fff;
+	max-width: 17.15em;
+	white-space: normal;
+	text-align: left;
+	padding: .5em .75em;
+}
+	#hs-slider > .big{
+		font-weight: 600;
+		font-size: 1.125em;
+		text-transform: uppercase;
+	}
+		/** Wrap "Australian Marketers" better */
+		#hs-subscribe > p > span{
+			white-space: nowrap;
+		}
+
+	#hs-slider > p{
+		margin: .4em 0 .75em;
+		font: .75em "Open Sans";
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
+	
+	#hs-slider > .btn{
+		display: block;
+		font-size: 1em;
+	}
+
+
+/** HubSpot lightbox/modal dialogue */
+#hs-lightbox{
+	padding: 1em;
+}
+	#hs-subscribe{
+		position: relative;
+		padding: 2em 2em 2.5em;
+		z-index: 9;
+	}
+		/** Offset border */
+		#hs-subscribe::before{
+			content: "";
+			position: absolute;
+			top:	0;
+			left:	0;
+			right:	0;
+			bottom:	0;
+			margin:	.5em;
+			border: 2px solid #ababab;
+			z-index: -1;
+		}
+
+		/** Close button */
+		#hs-subscribe > .close{
+			color:	#cdcbcb;
+			margin: .05em .3em;
+			font-size: 3em;
+		}
+			#hs-subscribe > .close:hover{
+				color: #000;
+			}
+
+
+		/** "Oh, hey!" */
+		#hs-lightbox .big{
+			font: italic 5.25em Georgia;
+		}
+
+
+		/** Centred blue text */
+		#hs-subscribe > p{
+			color: #009ed5;
+			font-size: 1.5em;
+			margin: .5em 1em;
+		}
+			/** Join 2,000+ other Australian marketers*/
+			#hs-subscribe > p:first-of-type{
+				text-transform: uppercase;
+			}
+
+			/** "Get monthly newsletters delivered straight to your inbox" */
+			#hs-subscribe > p ~ p{
+				margin: .5em auto;
+				font-style: italic;
+				max-width: 20em;
+			}
+
+		/** Text fields and submission button */
+		#hs-subscribe input{
+			width: 100%;
+			font-size: 1.25em;
+		}
+
+
+		/** Form fields */
+		#hs-subscribe > fieldset{
+			margin: 1.5em 0;
+			white-space: nowrap;
+		}
+			/** Field columns */
+			#hs-subscribe > fieldset > label{
+				width: 50%;
+				display: inline-block;
+				vertical-align: top;
+				white-space: normal;
+				text-align: left;
+			}
+				#hs-subscribe .text{
+					display: block;
+					margin-bottom: .25em;
+				}
+
+			#f-first-name{	padding-right:	.75em;	}
+			#f-email{		padding-left:	.75em;	}
+
+
+			/** Validation error */
+			#hs-subscribe .error{
+				color: #f00;
+				font-size: .8em;
+				display: block;
+				overflow: hidden;
+				max-height: 0;
+				opacity: 0;
+				padding-left: .25em;
+				will-change: max-height, opacity;
+				white-space: nowrap;
+
+				-webkit-transition:	.5s ease all, .3s ease opacity .2s;
+				-moz-transition:	.5s ease all, .3s ease opacity .2s;
+				-o-transition:		.5s ease all, .3s ease opacity .2s;
+				transition:			.5s ease all, .3s ease opacity .2s;
+			}
+				#hs-subscribe .show.error{
+					max-height: 2em;
+					margin-top: .25em;
+					opacity: 1;
+				}
+
+
+
+		/** Submission button */
+		#hs-subscribe > .gold{
+			font-weight: normal;
+			padding: .85em 1em;
+			max-width: 14.3em;
+			margin: 0 auto;
+		}
+
+
+/*=============================================================================*
+	1. SMARTPHONES (< 600)
+===============================================================================*/
+@media not all and (min-width: 37.5em){
+
+#hs-subscribe{
+	padding: 1em 1.5em 1.5em;
+}
+	/** Generated border */
+	#hs-subscribe::before{
+		border-width: 1px;
+		margin: .25em;
+	}
+	
+	/** Close button */
+	#hs-subscribe > .close{
+		margin: 0 .2em;
+	}
+
+	/** "Oh, hey!" */
+	#hs-lightbox .big{
+		font-size: 3em;
+		margin-bottom: .25em;
+	}
+
+	#hs-subscribe input,
+	#hs-subscribe > p{
+		font-size: 1.25em;
+		margin: 0;
+	}
+
+
+	#hs-subscribe > fieldset{
+		margin-top: 0;
+	}
+		/** Knock the columns down so they become rows */
+		#hs-subscribe > fieldset > label{
+			padding: 0;
+			width: auto;
+			display: block;
+			margin: 1em auto .5em;
+		}
+			/** Validation error */
+			#hs-subscribe .error{
+				font-size: .9em;
+				padding-left: 0;
+			}
+				#hs-subscribe .show.error{
+					margin-top: .5em;
+				}
+
+	/** Submission button */
+	#hs-subscribe > .gold{
+		max-width: none;
+	}
+
+}
+
+
+/*=============================================================================*
+	1.5 TINY SMARTPHONES (< 400)
+===============================================================================*/
+@media (max-width: 25em){
+#hs-subscribe{
+	padding-left: 1em;
+	padding-right: 1em;
+}
+	#hs-lightbox .big{
+		font-size: 2.8em;
+	}
+
+	#hs-subscribe > fieldset > label{
+		margin: 1em 0 0;
+		font-size: .9em;
+	}
+	#hs-subscribe input,
+	#hs-subscribe > p{
+		font-size: 1em;
+	}
+}
