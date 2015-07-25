@@ -333,7 +333,7 @@ body.circle{
 
 					/** Google+ */
 					.social-links > .gp::before{
-						content: "g";
+						content: "\210a";
 					}
 
 					/** LinkedIn */
@@ -345,13 +345,13 @@ body.circle{
 
 					/** Facebook */
 					.social-links > .fb::before{
-						content: "f";
+						content: "\1d5f3";
 						color: #1478de;
 					}
 
 					/** Twitter */
 					.social-links > .tw::before{
-						content: "\f099";
+						content: "\1f54a";
 						color: #30b7fd;
 						font: .5em/1.2 OCDIcons;
 					}

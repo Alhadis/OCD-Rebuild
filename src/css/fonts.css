@@ -1,11 +1,12 @@
 /** Icon font */
 @font-face{
 	font-family: "OCDIcons";
-	src:url("../fonts/OCDIcons/OCDIcons.eot");
-	src:url("../fonts/OCDIcons/OCDIcons.eot#iefix") format("embedded-opentype"),
-		url("../fonts/OCDIcons/OCDIcons.woff") format("woff"),
-		url("../fonts/OCDIcons/OCDIcons.ttf") format("truetype"),
-		url("../fonts/OCDIcons/OCDIcons.svg#OCDIcons") format("svg");
+	src: url("../fonts/OCDIcons/OCDIcons.eot");
+	src: url("../fonts/OCDIcons/OCDIcons.eot#iefix") format("embedded-opentype"),
+		 url("../fonts/OCDIcons/OCDIcons.woff2") format("woff2"),
+		 url("../fonts/OCDIcons/OCDIcons.ttf") format("truetype"),
+		 url("../fonts/OCDIcons/OCDIcons.woff") format("woff"),
+		 url("../fonts/OCDIcons/OCDIcons.svg#OCDIcons") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
@@ -41,9 +42,9 @@
 .icon-chart::before					{	content: "\27c0";	}
 .icon-close::before					{	content: "\274c";	}
 .icon-envelope::before				{	content: "\2709";	}
-.icon-facebook-fat::before			{	content: "F";		}
-.icon-facebook::before				{	content: "f";		}
-.icon-google-plus::before			{	content: "g";		}
+.icon-facebook-alt::before			{	content: "\1d5bf";	}
+.icon-facebook::before				{	content: "\1d5f3";	}
+.icon-google-plus::before			{	content: "\210a";	}
 .icon-knight::before				{	content: "\265e";	}
 .icon-linked-in::before				{	content: "\33cc";	}
 .icon-ocd-logo::before				{	content: "\e60e";	}
@@ -58,4 +59,4 @@
 .icon-triangle-left::before			{	content: "\25c0";	}
 .icon-triangle-right::before		{	content: "\25b6";	}
 .icon-triangle-up::before			{	content: "\25b2";	}
-.icon-twitter::before				{	content: "\f099";	}
+.icon-twitter::before				{	content: "\1f54a";	}

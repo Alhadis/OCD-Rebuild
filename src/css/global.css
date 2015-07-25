@@ -324,7 +324,7 @@ p.big{
 
 		.badge.fb::after{
 			font-size: .58em;
-			content: "F";
+			content: "\1d5bf";
 		}
 
 		.badge.pencil::after{
