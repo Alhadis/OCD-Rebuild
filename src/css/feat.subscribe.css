@@ -34,6 +34,10 @@
 #hs-lightbox{
 	padding: 1em;
 }
+	#hs-subscribe input{
+		font-size: 1.25em;
+	}
+
 	#hs-subscribe{
 		position: relative;
 		padding: 2em 2em 2.5em;
@@ -87,67 +91,8 @@
 				max-width: 20em;
 			}
 
-		/** Text fields and submission button */
-		#hs-subscribe input{
-			width: 100%;
-			font-size: 1.25em;
-		}
 
 
-		/** Form fields */
-		#hs-subscribe > fieldset{
-			margin: 1.5em 0;
-			white-space: nowrap;
-		}
-			/** Field columns */
-			#hs-subscribe > fieldset > label{
-				width: 50%;
-				display: inline-block;
-				vertical-align: top;
-				white-space: normal;
-				text-align: left;
-			}
-				#hs-subscribe .text{
-					display: block;
-					margin-bottom: .25em;
-				}
-
-			#f-first-name{	padding-right:	.75em;	}
-			#f-email{		padding-left:	.75em;	}
-
-
-			/** Validation error */
-			#hs-subscribe .error{
-				color: #f00;
-				font-size: .8em;
-				display: block;
-				overflow: hidden;
-				max-height: 0;
-				opacity: 0;
-				padding-left: .25em;
-				will-change: max-height, opacity;
-				white-space: nowrap;
-
-				-webkit-transition:	.5s ease all, .3s ease opacity .2s;
-				-moz-transition:	.5s ease all, .3s ease opacity .2s;
-				-o-transition:		.5s ease all, .3s ease opacity .2s;
-				transition:			.5s ease all, .3s ease opacity .2s;
-			}
-				#hs-subscribe .show.error{
-					max-height: 2em;
-					margin-top: .25em;
-					opacity: 1;
-				}
-
-
-
-		/** Submission button */
-		#hs-subscribe > .gold{
-			font-weight: normal;
-			padding: .85em 1em;
-			max-width: 14.3em;
-			margin: 0 auto;
-		}
 
 
 /*=============================================================================*
@@ -204,6 +149,7 @@
 	/** Submission button */
 	#hs-subscribe > .gold{
 		max-width: none;
+		margin-top: 1em;
 	}
 
 }
@@ -228,5 +174,9 @@
 	#hs-subscribe input,
 	#hs-subscribe > p{
 		font-size: 1em;
+	}
+	
+	#hs-subscribe > .gold{
+		margin-top: 1.25em;
 	}
 }

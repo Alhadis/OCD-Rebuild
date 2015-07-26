@@ -165,6 +165,7 @@ textarea{
 	background: #c5c4c4;
 	border: 0;
 	padding: .5em;
+	color: #000;
 
 	-webkit-transition:	.3s ease all;
 	-moz-transition:	.3s ease all;
@@ -180,6 +181,30 @@ textarea{
 	textarea:focus{
 		background-color: #ddd;
 	}
+
+
+/** Selection fields */
+select{
+	padding: .5em;
+	border: 0;
+	color: #000;
+	line-height: normal;
+	background: #c5c4c4 no-repeat 100% 50% url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjY1cHgiIGhlaWdodD0iNjZweCIgdmlld0JveD0iMCAwIDY1IDY2Ij48cG9seWdvbiBwb2ludHM9IjAsMjMgNDAsMjMgMjAsNDgiLz48L3N2Zz4K");
+	-webkit-background-size:	auto 100%;
+	-khtml-background-size:		auto 100%;
+	-moz-background-size:		auto 100%;
+	-ms-background-size:		auto 100%;
+	-o-background-size:			auto 100%;
+	background-size:			auto 100%;
+
+	/** Remove rounded corners from selection menus */
+	-webkit-border-radius:	0;
+	-moz-border-radius:		0;
+	border-radius:			0;
+	-webkit-appearance:		none;
+	-moz-appearance:		none;
+	-ms-appearance:			none;
+}
 
 
 /** Blue buttons */
@@ -357,6 +382,58 @@ p.big{
 		font: bold .5em/1.8 OCDIcons;
 		position: absolute;
 		margin: .6em 0 0 -1.8em;
+	}
+
+
+/** HubSpot forms */
+.hbspt-form fieldset > label{
+	text-align: left;
+	margin: 0 0 1em;
+	display: block;
+}
+	/** Name of field */
+	.hbspt-form .text{
+		display: block;
+		font-size: .92em;
+		font-weight: 600;
+		margin-bottom: .25em;
+	}
+
+	.hbspt-form input,
+	.hbspt-form select{
+		width: 100%;
+	}
+
+	/** Validation error */
+	.hbspt-form .error{
+		color: #f00;
+		font-size: .8em;
+		display: block;
+		overflow: hidden;
+		max-height: 0;
+		opacity: 0;
+		will-change: max-height, opacity;
+		white-space: nowrap;
+
+		-webkit-transition:	.5s ease all, .3s ease opacity .2s;
+		-moz-transition:	.5s ease all, .3s ease opacity .2s;
+		-o-transition:		.5s ease all, .3s ease opacity .2s;
+		transition:			.5s ease all, .3s ease opacity .2s;
+	}
+		.hbspt-form .show.error{
+			max-height: 2em;
+			margin-top: .55em;
+			opacity: 1;
+		}
+
+
+	/** Huge golden submission button */
+	.hbspt-form input.gold{
+		font-size: 1.25em;
+		font-weight: normal;
+		padding: .85em 1em;
+		max-width: 11.2em;
+		margin: 0 auto;
 	}
 
 	

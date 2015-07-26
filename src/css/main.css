@@ -586,6 +586,34 @@ p.big{
 				right: .5em;
 				margin-bottom: -.5em;
 			}
+
+
+/** HubSpot forms */
+.hbspt-form{
+}
+	/** Grouped fields */
+	.hbspt-form fieldset{
+		margin: 1.5em -1em .75em;
+		text-align: center;
+	}
+		/** Field */
+		.hbspt-form fieldset > label{
+			width: 45%;
+			width: -webkit-calc(	50% - 1.5em);
+			width: -moz-calc(		50% - 1.5em);
+			width: calc(			50% - 1.5em);
+			margin: 0 .5em .75em;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.hbspt-form label.wide{
+			width: 90%;
+			width: -webkit-calc(	100% - 2em);
+			width: -moz-calc(		100% - 2em);
+			width: calc(			100% - 2em);
+			padding: 0;
+		}
 }
 
 
