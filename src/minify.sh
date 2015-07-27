@@ -7,8 +7,14 @@ cd `dirname $0`;
 [ ! -d min ] && { mkdir min; }
 
 
+# Strip unused rulesets from fonts.css; they only exist as reference
+tmp=fonts-tmp.css;
+perl -e '$/=undef;while(<>){($r=$_)=~s/\[class\^="icon-"\].*$//gsi;}print STDOUT $r;' < css/fonts.css > $tmp
+
+
 # Stylesheets
-cat css/fonts.css css/global.css css/main.css | cleancss --skip-advanced -o min/min.css
+cat $tmp css/global.css css/main.css | cleancss --skip-advanced -o min/min.css
+rm $tmp
 
 names=('about' 'asx' 'careers' 'clients' 'clients.lteIE9' 'contact' 'home' 'resources')
 for i in ${names[@]}; do
