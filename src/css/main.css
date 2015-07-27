@@ -391,6 +391,14 @@ body.circle{
 ===============================================================================*/
 @media not all and (min-width: 64em){
 
+
+/** Hide the edit page link for mobile devices: it only exists as a convenience for OCD staff (who're using desktops to manage content anyway). */
+#edit-link{
+	display: none;
+}
+
+
+
 #topnav{
 	
 }
@@ -630,6 +638,7 @@ body{
 #top{
 	text-align: left;
 }
+	/** OCD logo */
 	#logo{
 		left: auto;
 		top:	0;
@@ -659,6 +668,24 @@ body{
 				-o-background-size:			87% auto;
 				background-size:			87% auto;
 			}
+
+
+	/** Edit page link */
+	#edit-link{
+		position: absolute;
+		right:	0;
+		top:	7.5em;
+		width:	6.8em;
+		margin:	1.457em;
+		padding: .575em 1em;
+		font: 600 .875em "Open Sans";
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+	}
+		#edit-link:hover{
+			text-shadow: none;
+		}
 
 
 	/** Navigation menu */
