@@ -809,9 +809,12 @@ body.circle{
 /*=============================================================================*
 	3.5 LARGE DESKTOP (1760+)
 ===============================================================================*/
-@media (min-width: 110em){
+@media (min-width: 110em), (min-height: 20em){
+
+/** IE9 doesn't understand vmax units, so we'll use vw as a fallback instead. */
 body{
 	font-size: 1vw;
+	font-size: 1vmax;
 }
 }
 
