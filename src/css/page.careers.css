@@ -112,9 +112,9 @@ body{
 
 
 /*=============================================================================*
-	3.5 LARGE DESKTOP (1760+)
+	3.5 LARGE DESKTOP (1760+ width OR 1152+ height)
 ===============================================================================*/
-@media (min-width: 110em), (min-height: 20em){
+@media (min-width: 110em), (min-height: 72em){
 body{
 	-webkit-background-size:	8.2vmax auto;
 	-khtml-background-size:		8.2vmax auto;
